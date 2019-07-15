@@ -24,6 +24,10 @@ public class Animal implements Competitor {
         this.onDistance = true;
     }
 
+    public Animal(){
+        //пустой конструктор
+    };
+
     @Override
     public void run(int dist) {
         if (dist <= maxRunDistance) {
