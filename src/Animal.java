@@ -65,6 +65,15 @@ public class Animal implements Competitor {
 
     @Override
     public void info() {
-        System.out.println(type + " " + name + " - " + onDistance);
+        if (onDistance){
+            System.out.println(type + " " + name + " молодец");
+        }else {
+            System.out.println(type + " " + name + " облажался по полной программе");
+        }
+    }
+
+    @Override
+    public String showNames() {
+        return (type + " " + name);
     }
 }

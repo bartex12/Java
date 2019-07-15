@@ -11,23 +11,13 @@ public class Cource {
         course[3] =new Cross(120);
     }
 
-
     public void doIt (Team team){
         for (Competitor c : team.group) {
+            System.out.println("");
             for (Obstacle o : course) {
                 o.doIt(c);
                 if (!c.isOnDistance()) break;            }
         }
     }
-
-//    @Override
-//    public void doIt(Competitor competitor) {
-//
-//        for (Competitor c : competitors) {
-//           for (Obstacle o : course) {
-//               o.doIt(c);
-//                if (!c.isOnDistance()) break;            }
-//        }
-//    }
 
 }

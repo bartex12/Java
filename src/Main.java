@@ -5,7 +5,7 @@ public class Main {
         Cource cource = new Cource();
         Team team = new Team("AdiDas");
         cource.doIt(team);
-        team.info();
+        team.showResults();
 
     }
 }

@@ -52,6 +52,15 @@ public class Human implements Competitor {
 
     @Override
     public void info() {
-        System.out.println(name + " - " + active);
+        if (active){
+            System.out.println(name + " молодец");
+        }else {
+            System.out.println(name + " облажался по полной программе");
+        }
+    }
+
+    @Override
+    public String showNames() {
+        return name;
     }
 }
