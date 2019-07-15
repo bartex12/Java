@@ -1,4 +1,12 @@
-package PACKAGE_NAME;
+public class Wall extends Obstacle {
+    int height;
 
-public class Wall {
+    public Wall(int height) {
+        this.height = height;
+    }
+
+    @Override
+    public void doIt(Competitor competitor) {
+        competitor.jump(height);
+    }
 }

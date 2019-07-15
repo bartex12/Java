@@ -1,4 +1,12 @@
-package PACKAGE_NAME;
+public class Water extends Obstacle {
+    int length;
 
-public class Water {
+    public Water(int length) {
+        this.length = length;
+    }
+
+    @Override
+    public void doIt(Competitor competitor) {
+        competitor.swim(length);
+    }
 }
