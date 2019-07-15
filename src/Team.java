@@ -15,6 +15,7 @@ public class Team {
     }
 
     public Team(String nameTeam, Competitor... competitors ){
+        this.nameTeam = nameTeam;
         group = new Competitor[competitors.length];
         for (int i = 0; i<competitors.length; i++ ){
             group[i] = competitors[i];
