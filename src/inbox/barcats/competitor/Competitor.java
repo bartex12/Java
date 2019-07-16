@@ -1,4 +1,4 @@
-
+package inbox.barcats.competitor;
 
 public interface Competitor {
     void run(int dist);

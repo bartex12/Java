@@ -1,12 +1,14 @@
-public class Team {
-    String nameTeam;
-    final int number = 4;
+package inbox.barcats.competitor;
 
-    Competitor[] group;
+public class Team {
+    private String nameTeam;
+    private final int number = 4;
+
+    public Competitor[] group;
 
     public Team(String nameTeam){
         this.nameTeam = nameTeam;
-        group = new Competitor[4];
+        group = new Competitor[number];
         group[0] = new Human("Семён Семёныч");
         group[1] = new Human("Петя");
         group[2] = new Cat("Васька");
@@ -25,7 +27,8 @@ public class Team {
 
     public void showTeamNames(){
         System.out.println("");
-        System.out.println("В команду " + nameTeam + " входят: ");
+        System.out.println("**********************************");
+        System.out.println("*** В команду " + nameTeam + " входят *** ");
         for (Competitor c: group){
             System.out.println( c.showNames());
         }
@@ -33,6 +36,7 @@ public class Team {
 
 public void showResults(){
     System.out.println("");
+    System.out.println("### Оценка прохождения полосы препятствий ###");
         for (Competitor g: group){
                g.info();
         }
