@@ -1,14 +1,14 @@
-
+package inbox.barcats.competitor;
 
 public class Animal implements Competitor {
-    String type;
-    String name;
+    private String type;
+    private String name;
 
-    int maxRunDistance;
-    int maxJumpHeight;
-    int maxSwimDistance;
+   private int maxRunDistance;
+   private int maxJumpHeight;
+    private int maxSwimDistance;
 
-    boolean onDistance;
+    private boolean onDistance;
 
     @Override
     public boolean isOnDistance() {
