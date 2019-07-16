@@ -1,3 +1,7 @@
+package inbox.barcats.cource;
+
+import inbox.barcats.competitor.Competitor;
+
 public class Wall extends Obstacle {
     int height;
 

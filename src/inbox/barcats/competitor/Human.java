@@ -1,11 +1,14 @@
+package inbox.barcats.competitor;
+
 public class Human implements Competitor {
-    String name;
 
-    int maxRunDistance;
-    int maxJumpHeight;
-    int maxSwimDistance;
+    private String name;
 
-    boolean active;
+    private int maxRunDistance;
+    private int maxJumpHeight;
+    private int maxSwimDistance;
+
+    private boolean active;
 
     @Override
     public boolean isOnDistance() {

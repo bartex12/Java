@@ -1,3 +1,7 @@
+package inbox.barcats.cource;
+
+import inbox.barcats.competitor.Competitor;
+
 public class Water extends Obstacle {
     int length;
 
