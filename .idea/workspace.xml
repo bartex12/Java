@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b96fad95-a39e-40bc-99a4-20c789ed4182" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java/Animal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java/Cat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java/Competitor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java/Cross.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java/Dog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java/Human.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java/Obstacle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java/Wall.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java/Water.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inbox/barcats/competitor/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inbox/barcats/competitor/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inbox/barcats/competitor/Competitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inbox/barcats/competitor/Competitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inbox/barcats/competitor/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inbox/barcats/competitor/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inbox/barcats/competitor/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inbox/barcats/competitor/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inbox/barcats/competitor/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inbox/barcats/competitor/Team.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inbox/barcats/cource/Cource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inbox/barcats/cource/Cource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inbox/barcats/cource/Cross.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inbox/barcats/cource/Cross.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inbox/barcats/cource/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inbox/barcats/cource/Obstacle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inbox/barcats/cource/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inbox/barcats/cource/Wall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inbox/barcats/cource/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inbox/barcats/cource/Water.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/inbox/barcats/marathon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/inbox/barcats/marathon/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson_2/src/rrr/Main_Lesson2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Lesson_2/src/rrr/Main_Lesson2.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,52 +19,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/inbox/barcats/competitor/Cat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/inbox/barcats/competitor/Dog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/inbox/barcats/competitor/Human.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/inbox/barcats/cource/Cource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/inbox/barcats/marathon/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="12" column="44" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -90,50 +30,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/inbox/barcats/competitor/Animal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-595">
-              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+            <state relative-caret-position="374">
+              <caret line="33" column="82" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="82" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/inbox/barcats/cource/Cross.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Lesson_2/src/rrr/Main_Lesson2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
-                <element signature="e#198#199#0" expanded="true" />
-                <element signature="e#234#235#0" expanded="true" />
-                <element signature="e#295#296#0" expanded="true" />
-                <element signature="e#333#334#0" expanded="true" />
+                <element signature="e#77#78#0" expanded="true" />
+                <element signature="e#162#163#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/inbox/barcats/cource/Obstacle.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/inbox/barcats/cource/Water.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/inbox/barcats/competitor/Team.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="65" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -178,6 +89,8 @@
         <option value="$PROJECT_DIR$/src/inbox/barcats/marathon/Main.java" />
         <option value="$PROJECT_DIR$/src/inbox/barcats/competitor/Team.java" />
         <option value="$PROJECT_DIR$/src/inbox/barcats/cource/Cource.java" />
+        <option value="$PROJECT_DIR$/Lesson_2/src/rrr/Main.java" />
+        <option value="$PROJECT_DIR$/Lesson_2/src/rrr/Main_Lesson2.java" />
       </list>
     </option>
   </component>
@@ -203,36 +116,33 @@
             <path>
               <item name="Lesson1" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="Lesson_2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lesson1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="Lesson_2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Lesson1" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="Lesson_2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="competitor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lesson1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cource" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lesson1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="marathon" type="462c0819:PsiDirectoryNode" />
+              <item name="rrr" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8 (3)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Lesson_2" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -249,7 +159,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.lesson2 ">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="inbox.barcats.marathon.Main" />
       <module name="Java" />
@@ -257,6 +167,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="lesson2 " type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="rrr.Main_Lesson2" />
+      <module name="Lesson_2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lesson_2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.lesson2 " />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -273,9 +195,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2574899" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29149798" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -284,7 +205,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3611111" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3611111" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -351,13 +272,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/inbox/barcats/competitor/Animal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-595">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/inbox/barcats/cource/Cross.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -399,16 +313,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/inbox/barcats/marathon/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/inbox/barcats/competitor/Team.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -422,6 +326,31 @@
           <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/inbox/barcats/marathon/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="44" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/inbox/barcats/competitor/Animal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="33" column="82" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lesson_2/src/rrr/Main_Lesson2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#77#78#0" expanded="true" />
+            <element signature="e#162#163#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -476,7 +405,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Java</last-edited>
+          <last-edited>Lesson_2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
