@@ -1,6 +1,7 @@
-package Lesson_2;
+package Lesson_2_Array4x4;
 
 public class Array_Demo {
+
     public static void main(String[] args) {
 
         String[][] array44 = {{"10","11","12","13"},
