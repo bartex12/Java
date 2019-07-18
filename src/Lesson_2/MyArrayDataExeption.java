@@ -1,4 +1,4 @@
-package Lesson_2_Array4x4;
+package Lesson_2;
 
 public class MyArrayDataExeption extends Exception{
     private String s;

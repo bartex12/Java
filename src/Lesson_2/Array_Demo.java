@@ -1,15 +1,15 @@
-package Lesson_2_Array4x4;
+package Lesson_2;
 
 public class Array_Demo {
 
     public static void main(String[] args) {
-
+        //без ошибок
         String[][] array44 = {{"10","11","12","13"},
                 {"20","21","22","23"},{"30","31","32","33"},{"40","41","42","44"}};
-
+        //исключение MyArrayDataExeption
         String[][] mistake = {{"10","11","12","13"},
                 {"20","21","22","23"},{"30","31","32","33"},{"40","qqq","42","44"}};
-
+        //исключение MyArraySizeExeption
         String[][] mistake2 = {{"10","11","12","13"}};
 
         try {

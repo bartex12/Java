@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b96fad95-a39e-40bc-99a4-20c789ed4182" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Lesson_2_Array4x4/Array_Demo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lesson_2_Array4x4/MyArraySizeExeption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lesson_2/Array_Demo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lesson_2/MyArrayDataExeption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lesson_2_Array4x4/MyArrayDataExeption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Lesson_2/MyArraySizeExeption.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lesson_2_Array4x4/Array_Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lesson_2_Array4x4/Array_Demo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,16 +16,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Lesson_2_Array4x4/Array_Demo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="-204">
+              <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Lesson_2_Array4x4/MyArrayDataExeption.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
@@ -156,7 +151,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Lesson2" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Lesson_2_Array4x4.Array_Demo" />
+      <option name="MAIN_CLASS_NAME" value="Lesson_2.Array_Demo" />
       <module name="Java" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/Lesson_2" />
       <method v="2">
@@ -179,6 +174,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26639676" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -249,13 +245,6 @@
     <entry file="file://$PROJECT_DIR$/Lesson_2/src/www/Main_Lesson2.java" />
     <entry file="file://$PROJECT_DIR$/src/inbox/barcats/competitor/Cat.java" />
     <entry file="file://$PROJECT_DIR$/Lesson_2/src/www/Cat.java" />
-    <entry file="file://$PROJECT_DIR$/src/Lesson_2_Array4x4/Array_Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Lesson_2_Array4x4/MyArraySizeExeption.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -267,6 +256,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lesson_2_Array4x4/Array_Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
         </state>
       </provider>
     </entry>
