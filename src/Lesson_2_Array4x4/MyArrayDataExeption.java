@@ -1,9 +1,9 @@
 package Lesson_2;
 
-public class MyArraySizeExeption extends Exception{
+public class MyArrayDataExeption extends Exception{
     private String s;
 
-    public MyArraySizeExeption(String s){
+    public MyArrayDataExeption(String s){
         this.s = s;
         System.out.println("");
         System.out.println("Не число в позиции: " +s);
