@@ -1,3 +1,5 @@
+package ArrayRepeated;
+
 import java.util.*;
 
 public class ArraySetRepeated_Demo {
