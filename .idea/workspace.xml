@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b96fad95-a39e-40bc-99a4-20c789ed4182" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/Telefon/PhoneBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Telefon/PhoneBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/Telefon/Telefon_Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/Telefon/Telefon_Demo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scr/password/Password_Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/password/Password_Demo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -40,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scr/password/Password_Demo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="52" column="52" lean-forward="true" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+            <state relative-caret-position="867">
+              <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -300,8 +297,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scr/password/Password_Demo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="52" column="52" lean-forward="true" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+        <state relative-caret-position="867">
+          <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
         </state>
       </provider>
     </entry>

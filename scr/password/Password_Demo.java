@@ -3,9 +3,8 @@ package password;
 public class Password_Demo {
     public static void main(String[] args) {
 
-        String[] test = {"123QQwwyy/)", "a3htDFV 1",
-                "корова", "корова222",  ")))))))RTNnj","10_НЕГРИТЯТ",
-                "4434436556464dddddDDDDD&&&&&&&&"};
+        String[] test = {"123QQwwyy/)", "a3htDFV 1", "корова", "корова222",
+                ")))))))RTNnj","10_НЕГРИТЯТ",  "4434436556464dddddDDDDD&&&&&&&&"};
 
        for (String t:test ){
            System.out.println("");
@@ -39,20 +38,16 @@ public class Password_Demo {
 
             for (int i = 0; i<size; i++) {
                 if (Character.isDigit(s.charAt(i))) {
-                    //System.out.println(" Цифра есть -> " + s.charAt(i));
                     digit = true;
                 }else if (Character.isLowerCase(s.charAt(i))) {
                     lowCase = true;
-                    //System.out.println(" Символ в нижнем регистре есть -> " + s.charAt(i1));
                 }else if (Character.isUpperCase(s.charAt(i))) {
                     upperCase = true;
-                    //System.out.println(" Символ в верхнем регистре есть -> " + s.charAt(i2));
                 }else{
                     Character ss = s.charAt(i);
                     String s1 = ss.toString();
                     if (specialChars.contains(s1)) {
                         special = true;
-                        //System.out.println("Специальный символ есть -> " + s1);
                     }
                 }
             }
