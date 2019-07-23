@@ -10,17 +10,19 @@ public class ArraySetRepeated_Demo {
         ArrayInit arrayInit = new ArrayInit(20, 4);
         arrayInit.info();
 
-        List<String> list = Arrays.asList(arrayInit.arrayRepeated);
+        List<String> list = Arrays.asList(arrayInit.getArrayRepeated());
         Iterator<String> iterator = list.iterator();
 
         Map<String, Integer> map = new HashMap<>();
 
         while (iterator.hasNext()) {
             String s = iterator.next();
+            //если по такому ключу ещё ничего нет
             if (map.get(s)==null) {
-                map.put(s, 1);
+                map.put(s, 1);  //кладём единицу
+                //а если по такому ключу что-то есть
             }else {
-                map.put(s, (map.get(s))+1);
+                map.put(s, (map.get(s))+1);  //добавляем 1 к тому, что есть
             }
         }
         System.out.println("Уникальные элементы массива");
@@ -43,6 +45,9 @@ public class ArraySetRepeated_Demo {
                 }
             }
 
+            public String[] getArrayRepeated() {
+                return arrayRepeated;
+            }
 
             public void info() {
                 System.out.println("Исходный массив строк");
