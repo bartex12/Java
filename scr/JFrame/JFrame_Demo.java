@@ -16,42 +16,53 @@ public class JFrame_Demo {
             setBounds(50,200,400,400);
             setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-            JPanel upperPanel = new JPanel();
+           JPanel upperPanel = new JPanel();
             JPanel bottomPanel = new JPanel();
             JPanel centerPanel = new JPanel();
 
-            upperPanel.setBackground(Color.gray);
             centerPanel.setBackground(Color.gray);
-            bottomPanel.setBackground(Color.green);
+            bottomPanel.setBackground(new Color( 160, 240, 225));
 
             bottomPanel.setPreferredSize(new Dimension(1,40));
-            upperPanel.setPreferredSize(new Dimension(1,40));
+            upperPanel.setPreferredSize(new Dimension(1,50));
 
-            add(upperPanel, BorderLayout.NORTH);
             add(bottomPanel, BorderLayout.SOUTH);
             add(centerPanel, BorderLayout.CENTER);
 
-            upperPanel.setLayout(new BorderLayout());
+            add(upperPanel, BorderLayout.NORTH);
+            upperPanel.setLayout(new GridLayout(2,2));
+            JPanel[ ] jp = new  JPanel[ 4 ] ;
+            JLabel[] jl = new JLabel[4];
+            for  ( int i = 0 ; i < 4 ; i++)  {
+                jp[i] = new  JPanel();
+                jl[i] = new JLabel();
+                jp[i].add(jl[i]);
+                jp[i].setBackground(new Color( 160, 240, 225) );
+                //jp[i].setBackground(new Color( 100 + i*40, 100 + i*40, 100 + i*40) );
+                upperPanel.add(jp[i]);
+            }
+            jl[0].setText(" Здесь может быть");
+            jl[1].setText("т. 8-888-888-88-88 ");
+            jl[2].setText(" ваша реклама");
+            jl[3].setText(" Круглосуточно  ");
+
             centerPanel.setLayout(new BorderLayout());
             bottomPanel.setLayout(new FlowLayout());
 
-            JTextArea rec = new JTextArea();
+            //JTextArea rec = new JTextArea();
             JTextArea jta = new JTextArea();
             JScrollPane jsp = new JScrollPane(jta);
             JTextField jtf = new JTextField();
             JButton jb = new JButton("Send");
 
-            upperPanel.add(rec, BorderLayout.CENTER);
             centerPanel.add(jsp, BorderLayout.CENTER);
             bottomPanel.add(jtf);
             bottomPanel.add(jb);
 
             jtf.setPreferredSize(new Dimension(300,28));
             jta.setEditable(false);
-            rec.setEditable(false);
 
-            rec.setBackground(Color.orange);
-            rec.append("\tЗдесь может быть ваша реклама.\n\t Звоните 8-888-888-88-88 круглосуточно\n");
+            //rec.append("\tЗдесь может быть ваша реклама.\n\t Звоните 8-888-888-88-88 круглосуточно\n");
 
             jb.addActionListener(new ActionListener() {
                 @Override
