@@ -64,6 +64,39 @@ public class JFrame_Demo {
 
             //**************************************
 
+            JMenuBar menuBar = new JMenuBar();
+            JMenu mFile = new JMenu("File");
+            JMenu mEdit = new JMenu("Edit");
+            JMenu mHelp = new JMenu("Help");
+            JMenuItem mNew = new JMenuItem("New");
+            JMenuItem mExit = new JMenuItem("Exit");
+            JMenuItem mCopy = new JMenuItem("Copy");
+            JMenuItem mSave = new JMenuItem("Save");
+            JMenuItem mClear = new JMenuItem("Clear");
+            JMenuItem mFaq = new JMenuItem("FAQ");
+            JMenuItem mAbout = new JMenuItem("About");
+
+            setJMenuBar(menuBar);
+            menuBar.add(mFile);
+            menuBar.add(mEdit);
+            menuBar.add(mHelp);
+
+            mFile.add(mNew);
+            mFile.addSeparator();
+            mFile.add(mExit);
+
+            mEdit.add(mCopy);
+            mEdit.addSeparator();
+            mEdit.add(mSave);
+            mEdit.addSeparator();
+            mEdit.add(mClear);
+
+            mHelp.add(mFaq);
+            mHelp.addSeparator();
+            mHelp.add(mAbout);
+
+            //**************************************
+
             setVisible(true);
 
             //******************************************
@@ -76,6 +109,50 @@ public class JFrame_Demo {
                     jtf.grabFocus();
                 }
             });
+
+            mExit.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    System.exit(0);
+                }
+            });
+
+            mFaq.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new My_Faq();
+                }
+            });
+
+            mAbout.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new My_Help();
+                }
+            });
         }
     }
+
+    public static class My_Faq extends JFrame{
+        public My_Faq(){
+            setTitle("FAQ");
+            setBounds(450,200,400,400);
+            setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+
+            setVisible(true);
+        }
+    }
+
+    public static class My_Help extends JFrame{
+        public My_Help(){
+            setTitle("About");
+            setBounds(450,200,400,100);
+            setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+            JLabel mLabel1 = new JLabel("     Программма сделана на расслабоне.");
+            setLayout(new BorderLayout());
+            add(mLabel1,BorderLayout.LINE_START );
+            setVisible(true);
+        }
+    }
+
 }
