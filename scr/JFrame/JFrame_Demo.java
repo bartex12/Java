@@ -12,23 +12,15 @@ public class JFrame_Demo {
 
     public static class MyWindow extends JFrame {
         public MyWindow() {
+
             setTitle("Hello");
             setBounds(50,200,400,400);
             setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+            //****************************
+
            JPanel upperPanel = new JPanel();
-            JPanel bottomPanel = new JPanel();
-            JPanel centerPanel = new JPanel();
-
-            centerPanel.setBackground(Color.gray);
-            bottomPanel.setBackground(new Color( 160, 240, 225));
-
-            bottomPanel.setPreferredSize(new Dimension(1,40));
             upperPanel.setPreferredSize(new Dimension(1,50));
-
-            add(bottomPanel, BorderLayout.SOUTH);
-            add(centerPanel, BorderLayout.CENTER);
-
             add(upperPanel, BorderLayout.NORTH);
             upperPanel.setLayout(new GridLayout(2,2));
             JPanel[ ] jp = new  JPanel[ 4 ] ;
@@ -46,23 +38,35 @@ public class JFrame_Demo {
             jl[2].setText(" ваша реклама");
             jl[3].setText(" Круглосуточно  ");
 
-            centerPanel.setLayout(new BorderLayout());
+           //**********************************
+
+            JPanel bottomPanel = new JPanel();
+            bottomPanel.setBackground(new Color( 160, 240, 225));
+            bottomPanel.setPreferredSize(new Dimension(1,40));
+            add(bottomPanel, BorderLayout.SOUTH);
             bottomPanel.setLayout(new FlowLayout());
-
-            //JTextArea rec = new JTextArea();
-            JTextArea jta = new JTextArea();
-            JScrollPane jsp = new JScrollPane(jta);
             JTextField jtf = new JTextField();
+            jtf.setPreferredSize(new Dimension(300,28));
             JButton jb = new JButton("Send");
-
-            centerPanel.add(jsp, BorderLayout.CENTER);
             bottomPanel.add(jtf);
             bottomPanel.add(jb);
 
-            jtf.setPreferredSize(new Dimension(300,28));
-            jta.setEditable(false);
+            //*************************************
 
-            //rec.append("\tЗдесь может быть ваша реклама.\n\t Звоните 8-888-888-88-88 круглосуточно\n");
+            JPanel centerPanel = new JPanel();
+            centerPanel.setBackground(Color.gray);
+            add(centerPanel, BorderLayout.CENTER);
+            centerPanel.setLayout(new BorderLayout());
+            JTextArea jta = new JTextArea();
+            jta.setEditable(false);
+            JScrollPane jsp = new JScrollPane(jta);
+            centerPanel.add(jsp, BorderLayout.CENTER);
+
+            //**************************************
+
+            setVisible(true);
+
+            //******************************************
 
             jb.addActionListener(new ActionListener() {
                 @Override
@@ -72,9 +76,6 @@ public class JFrame_Demo {
                     jtf.grabFocus();
                 }
             });
-
-
-            setVisible(true);
         }
     }
 }
