@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b96fad95-a39e-40bc-99a4-20c789ed4182" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/JFrame/JFrame_Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/JFrame/JFrame_Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/JFrame/MyWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/JFrame/MyWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/JFrame/My_Faq.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/JFrame/My_Faq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/JFrame/My_Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/scr/JFrame/My_Help.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scr/rekTel.png" beforeDir="false" afterPath="$PROJECT_DIR$/scr/rekTel.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scr/JFrame/MyWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+            <state relative-caret-position="272">
+              <caret line="67" column="18" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4333#4334#0" expanded="true" />
@@ -230,7 +224,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962963" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3611111" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3611111" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -357,8 +351,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scr/JFrame/MyWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+        <state relative-caret-position="272">
+          <caret line="67" column="18" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4333#4334#0" expanded="true" />

@@ -66,6 +66,7 @@ public class MyWindow extends JFrame {
         add(bottomPanel, BorderLayout.SOUTH);
         bottomPanel.setLayout(new FlowLayout());
         JTextField jtf = new JTextField();
+        jtf.setForeground(Color.BLUE);
         jtf.setPreferredSize(new Dimension(280,28));
         jtf.setFont(new Font("Dialog", Font.PLAIN, 20));
         jtf.setToolTipText("Поле ввода текста");
