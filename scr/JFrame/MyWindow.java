@@ -11,7 +11,7 @@ public class MyWindow extends JFrame {
         ImageIcon imageWindow = new ImageIcon("scr/smile.png");
         this.setIconImage(imageWindow.getImage());
         //setTitle("Hello");
-        setBounds(50,200,400,400);
+        setBounds(50,200,400,450);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         //****************************
@@ -80,6 +80,9 @@ public class MyWindow extends JFrame {
         //**************************************
 
         JMenuBar menuBar = new JMenuBar();
+        Font f = new Font("sans-serif", Font.PLAIN, 16);
+        UIManager.put("Menu.font", f);
+        UIManager.put("MenuItem.font", f);
         JMenu mFile = new JMenu("File");
         JMenu mEdit = new JMenu("Edit");
         JMenu mHelp = new JMenu("Help");
