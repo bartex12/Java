@@ -12,6 +12,7 @@ public class My_Help extends JFrame {
         setBounds(450,200,400,120);
         setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         setBackground(new Color(160,240,225));
+        setResizable(false);
 
         JPanel aboutPanel = new JPanel();
         aboutPanel.setBackground(new Color( 160, 240, 225));

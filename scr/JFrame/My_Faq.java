@@ -10,6 +10,8 @@ public class My_Faq extends JFrame{
         setTitle("FAQ");
         setBounds(450,200,400,450);
         setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+        setResizable(false);
+
         JTextArea jta_faq = new JTextArea();
         jta_faq.setBackground(new Color( 230,250,245));
         jta_faq.setFont(new Font("sans-serif", Font.PLAIN, 16));

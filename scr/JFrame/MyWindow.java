@@ -13,6 +13,7 @@ public class MyWindow extends JFrame {
         //setTitle("Hello");
         setBounds(50,200,400,450);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         //****************************
 
