@@ -23,7 +23,7 @@ public class My_Help extends JFrame {
         ImageIcon imageIcon = new ImageIcon("scr/cat_winner.png");
         JLabel mLabel1 = new JLabel("  Программма сделана на расслабоне.", JLabel.CENTER);
         mLabel1.setIcon(imageIcon);
-        mLabel1.setFont(new Font("sans-serif", Font.PLAIN, 16));
+        mLabel1.setFont(new Font("sans-serif", Font.BOLD|Font.ITALIC, 16));
         aboutPanel.add(mLabel1);
         add(aboutPanel);
         setVisible(true);
