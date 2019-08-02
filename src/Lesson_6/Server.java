@@ -25,6 +25,7 @@ public class Server {
                 String str = sc.nextLine();
                 System.out.println("Client - " + str);
 
+                if (str.equals("/end"))break;
                 writer.println("Echo - " + str); ///!!!writer.println а не System.out.println (ИНАЧЕ ВЫВОД В КОНСОЛЬ)
             }
         } catch (IOException e) {
