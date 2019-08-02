@@ -1,4 +1,4 @@
-package Lesson_6;
+package ChatServer;
 
 import java.io.IOException;
 import java.io.PrintWriter;
