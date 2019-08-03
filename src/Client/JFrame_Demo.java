@@ -1,7 +1,8 @@
-package Frame;
+package Client;
 
 public class JFrame_Demo {
     public static void main(String[] args) {
-        new MyWindow();
+        MyWindow myWindow = new MyWindow();
+        myWindow.initialize();
     }
 }

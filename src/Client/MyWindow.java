@@ -1,12 +1,70 @@
-package Frame;
+package Client;
+
+import javafx.fxml.Initializable;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.net.URL;
+import java.net.UnknownHostException;
+import java.util.ResourceBundle;
 
-public class MyWindow extends JFrame {
+public class MyWindow extends JFrame  {
+
+    private JTextArea jta;
+
+    Socket socket;
+    DataInputStream in;
+    DataOutputStream out;
+
+    final String IP_ADRESS = "localhost";
+    final int PORT = 8189;
+
+    //***************** метод взаимодействия с сервером  ***************
+    public void initialize() {
+        try {
+            System.out.println("*************************");
+            socket = new Socket(IP_ADRESS,PORT );
+            //System.out.println(socket.isClosed());
+            in = new DataInputStream(socket.getInputStream());
+            out = new DataOutputStream(socket.getOutputStream());
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        while (true){
+                            String str = in.readUTF();
+                            jta.append(str + "\n");
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }finally {
+                        try {
+                            socket.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }).start();
+
+        }catch (IOException e1){
+            e1.printStackTrace();
+        }
+    }
+
+
+
+    //****************  конструктор - готови и выводим окно чата, взаимодействуем с сервером *************
     public MyWindow() {
+
+        //**************задаём общие настройки**************
         super("Hello");
         ImageIcon imageWindow = new ImageIcon("src/smile.png");
         System.out.println(" Ширина иконки приложения = " + imageWindow.getIconWidth());
@@ -16,8 +74,7 @@ public class MyWindow extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        //****************************
-
+        //************задаём настройки рекламного баннера****************
         JPanel reclamPanel = new JPanel();
         reclamPanel.setPreferredSize(new Dimension(1,75));
         add(reclamPanel, BorderLayout.NORTH);
@@ -48,20 +105,19 @@ public class MyWindow extends JFrame {
         jp[2].add(jlab3);
         reclamPanel.add(jp[2]);
 
-        //**********************************
-
+        //******************настройка окна отображения чата****************
         JPanel centerPanel = new JPanel();
-        centerPanel.setBackground(Color.gray);
+        //centerPanel.setBackground(Color.gray);
+        centerPanel.setBackground(new Color( 160, 240, 225));
         add(centerPanel, BorderLayout.CENTER);
         centerPanel.setLayout(new BorderLayout());
-        JTextArea jta = new JTextArea();
+        jta = new JTextArea();
         jta.setEditable(false);
         jta.setFont(new Font("Dialog", Font.PLAIN, 20));
         JScrollPane jsp = new JScrollPane(jta);
         centerPanel.add(jsp, BorderLayout.CENTER);
 
-        //*************************************
-
+        //******************настройка строки и кнопки ввода****************
         JPanel bottomPanel = new JPanel();
         bottomPanel.setBackground(new Color( 160, 240, 225));
         bottomPanel.setPreferredSize(new Dimension(1,40));
@@ -79,8 +135,7 @@ public class MyWindow extends JFrame {
         bottomPanel.add(jtf);
         bottomPanel.add(jb);
 
-        //**************************************
-
+        //****************Блок меню**********************
         JMenuBar menuBar = new JMenuBar();
         Font f = new Font("sans-serif", Font.PLAIN, 16);
         UIManager.put("Menu.font", f);
@@ -88,10 +143,7 @@ public class MyWindow extends JFrame {
         JMenu mFile = new JMenu("File");
         JMenu mEdit = new JMenu("Edit");
         JMenu mHelp = new JMenu("Help");
-        //JMenuItem mNew = new JMenuItem("New");
         JMenuItem mExit = new JMenuItem("Exit");
-       // JMenuItem mCopy = new JMenuItem("Copy");
-       // JMenuItem mSave = new JMenuItem("Save");
         JMenuItem mClear = new JMenuItem("Clear");
         JMenuItem mFaq = new JMenuItem("FAQ");
         JMenuItem mAbout = new JMenuItem("About");
@@ -101,35 +153,37 @@ public class MyWindow extends JFrame {
         menuBar.add(mEdit);
         menuBar.add(mHelp);
 
-        //mFile.add(mNew);
-       // mFile.addSeparator();
         mFile.add(mExit);
 
-        //mEdit.add(mCopy);
-        //mEdit.addSeparator();
-        //mEdit.add(mSave);
-        //mEdit.addSeparator();
         mEdit.add(mClear);
 
         mHelp.add(mFaq);
         mHelp.addSeparator();
         mHelp.add(mAbout);
 
-        //**************************************
-
+        //*************  выводим окно чата на экран компа  *************************
         setVisible(true);
 
-        //******************************************
+        //***************** Слушатели событий *************************
 
+        //слушаем кнопку Send - при нажатии отправляем текст на сервер
         jb.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                jta.append(jtf.getText() + "\n");
-                jtf.setText("");
-                jtf.grabFocus();
+                try {
+                    //по кнопке отправляем текст на сервер, стираем строку и устанавливаем на неё фокус
+                    out.writeUTF(jtf.getText());
+                    //System.out.println("Ввод строки - " + jtf.getText());
+                    jtf.setText("");
+                    jtf.grabFocus();
+
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
 
+        //закрываем программу при нажатии Меню-> File->Exit
         mExit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -137,6 +191,7 @@ public class MyWindow extends JFrame {
             }
         });
 
+        //Выводим экран FAQ при нажатии Меню-> Help->FAQ
         mFaq.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -144,6 +199,7 @@ public class MyWindow extends JFrame {
             }
         });
 
+        //Выводим экран About при нажатии Меню-> Help->About
         mAbout.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -151,6 +207,7 @@ public class MyWindow extends JFrame {
             }
         });
 
+        //Стираем записи чата при нажатии Меню-> Edit->Clear
         mClear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -158,16 +215,9 @@ public class MyWindow extends JFrame {
             }
         });
 
-        jtf.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                jta.append(jtf.getText() + "\n");
-                jtf.setText("");
-                jtf.grabFocus();
-            }
-        });
-    }
 
-    
+        //*****************вызываем метод взаимодействия с сервером**************
+        //initialize();
+    }
 }
 
