@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class My_Faq extends JFrame{
     public My_Faq(){
-        ImageIcon imageWindow = new ImageIcon("scr/smile.png");
+        ImageIcon imageWindow = new ImageIcon("src/smile.png");
         this.setIconImage(imageWindow.getImage());
         setTitle("FAQ");
         setBounds(450,200,400,450);

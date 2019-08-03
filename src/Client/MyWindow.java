@@ -1,7 +1,5 @@
 package Client;
 
-import javafx.fxml.Initializable;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,9 +8,6 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.net.URL;
-import java.net.UnknownHostException;
-import java.util.ResourceBundle;
 
 public class MyWindow extends JFrame  {
 
@@ -28,12 +23,13 @@ public class MyWindow extends JFrame  {
     //***************** метод взаимодействия с сервером  ***************
     public void initialize() {
         try {
-            System.out.println("*************************");
-            socket = new Socket(IP_ADRESS,PORT );
-            //System.out.println(socket.isClosed());
-            in = new DataInputStream(socket.getInputStream());
-            out = new DataOutputStream(socket.getOutputStream());
+            System.out.println("********** initialize() ***************");
+            //подготовительные действия
+            socket = new Socket(IP_ADRESS,PORT );  //создаём сокет на основе адреса и порта
+            in = new DataInputStream(socket.getInputStream());  //получаем входной поток из сокета
+            out = new DataOutputStream(socket.getOutputStream());  //получаем выходной поток из сокета
 
+            //создаём новый поток
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -41,6 +37,10 @@ public class MyWindow extends JFrame  {
                         while (true){
                             String str = in.readUTF();
                             jta.append(str + "\n");
+                            if (str.equals("/server Cloused")){
+                                System.exit(0);
+                                break;
+                            }
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -59,19 +59,16 @@ public class MyWindow extends JFrame  {
         }
     }
 
-
-
     //****************  конструктор - готови и выводим окно чата, взаимодействуем с сервером *************
     public MyWindow() {
-
         //**************задаём общие настройки**************
         super("Hello");
         ImageIcon imageWindow = new ImageIcon("src/smile.png");
-        System.out.println(" Ширина иконки приложения = " + imageWindow.getIconWidth());
+        //System.out.println(" Ширина иконки приложения = " + imageWindow.getIconWidth());
         this.setIconImage(imageWindow.getImage());
         //setTitle("Hello");
         setBounds(50,200,400,450);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
 
         //************задаём настройки рекламного баннера****************
@@ -107,13 +104,12 @@ public class MyWindow extends JFrame  {
 
         //******************настройка окна отображения чата****************
         JPanel centerPanel = new JPanel();
-        //centerPanel.setBackground(Color.gray);
         centerPanel.setBackground(new Color( 160, 240, 225));
         add(centerPanel, BorderLayout.CENTER);
         centerPanel.setLayout(new BorderLayout());
         jta = new JTextArea();
         jta.setEditable(false);
-        jta.setFont(new Font("Dialog", Font.PLAIN, 20));
+        jta.setFont(new Font("Dialog", Font.PLAIN, 16));
         JScrollPane jsp = new JScrollPane(jta);
         centerPanel.add(jsp, BorderLayout.CENTER);
 
@@ -129,7 +125,6 @@ public class MyWindow extends JFrame  {
         jtf.setFont(new Font("Dialog", Font.PLAIN, 20));
         jtf.setToolTipText("Поле ввода текста");
         ImageIcon imageIconBtn = new ImageIcon("src/letters16x10.png");
-        //System.out.println(imageIconBtn);
         JButton jb = new JButton("Send",imageIconBtn);
         jb.setToolTipText("Отправить сообщение");
         bottomPanel.add(jtf);
@@ -172,11 +167,11 @@ public class MyWindow extends JFrame  {
             public void actionPerformed(ActionEvent e) {
                 try {
                     //по кнопке отправляем текст на сервер, стираем строку и устанавливаем на неё фокус
-                    out.writeUTF(jtf.getText());
-                    //System.out.println("Ввод строки - " + jtf.getText());
-                    jtf.setText("");
-                    jtf.grabFocus();
-
+                    if (!socket.isClosed()){
+                        out.writeUTF(jtf.getText());
+                        jtf.setText("");
+                        jtf.grabFocus();
+                    }
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -187,7 +182,12 @@ public class MyWindow extends JFrame  {
         mExit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+                System.out.println("Выход через меню");
+                try {
+                    out.writeUTF("/end");
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
             }
         });
 
@@ -214,10 +214,6 @@ public class MyWindow extends JFrame  {
                 jta.setText("");
             }
         });
-
-
-        //*****************вызываем метод взаимодействия с сервером**************
-        //initialize();
     }
 }
 
