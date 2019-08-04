@@ -14,7 +14,7 @@ public class Server  {
 
         clients =  new Vector<>();
         ServerSocket server = null;
-        
+
         try {
             server = new ServerSocket(8189);
             System.out.println("Сервер запущен");
