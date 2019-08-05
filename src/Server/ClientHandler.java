@@ -48,8 +48,8 @@ public class ClientHandler {
                                     //если принята строка /end
                                     if (str.equals("/end")){
                                         //отправляем сообщение только тому,кто прислал /end
-                                        server.broadcastMsgClosed(socket); //так слишком сложно - мы же в нужном нам потоке
-                                        //out.writeUTF("/server Cloused");  //отправляем сообщение только тому,кто прислал /end
+                                        //server.broadcastMsgClosed(socket); //так слишком сложно - мы же в нужном нам потоке
+                                        out.writeUTF("/server Cloused");  //отправляем сообщение только тому,кто прислал /end
                                         // а удаление слиента делаем в конце блока finally вызовом метода server.unsubscribe()
                                         break; //выходим из бесконечного цикла
                                     }
@@ -76,7 +76,7 @@ public class ClientHandler {
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-                            //server.unsubscribe(ClientHandler.this);
+                            server.unsubscribe(ClientHandler.this);
                         }
                 }
             }).start();

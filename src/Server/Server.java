@@ -28,8 +28,8 @@ public class Server  {
 
             while (true){
                 socket = server.accept();
-                clients.add( new ClientHandler(this, socket)); //так было
-               // subscribe(new ClientHandler(this, socket)); //так правильно
+               // clients.add( new ClientHandler(this, socket)); //так было
+                subscribe(new ClientHandler(this, socket)); //так правильно
                 this.broadcastMsgBegin(clients.lastElement());// сообщаем всем о появлении нового участника чата
                 System.out.println("Новый клиент = " + clients.lastElement()+ " socket = " + socket);
                 System.out.println("Всего клиентов = " + clients.size());
@@ -71,6 +71,10 @@ public class Server  {
 
     public void unsubscribe(ClientHandler client) {
         clients.remove(client);
+        System.out.println("Осталось клиентов = " + clients.size());
+        for(ClientHandler c: clients){
+            c.sendMsgStopped();
+        }
     }
 
     public void broadcastMsgClosed(Socket socket){
