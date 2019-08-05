@@ -4,6 +4,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.sql.SQLException;
 
 public class ClientHandler {
 
@@ -11,6 +12,7 @@ public class ClientHandler {
     private DataInputStream in;
     private DataOutputStream out;
     private Server server;
+    private String nick;
 
     public Socket getSocket() {
         return socket;
@@ -28,15 +30,27 @@ public class ClientHandler {
                 @Override
                 public void run() {
                         try {
-                            while (true){
 
+//                            while (true){
+//                                String str = in.readUTF();  //принимаем сообщение
+//                                if (str.startsWith("/auth")){
+//                                    String[] tokens = str.split(" ");
+//                                    String newNick = AuthService.getNickByLoginAndPass(tokens[1],tokens[2]);
+//                                    nick = newNick;
+//                                }
+//                                break;
+//                            }
+
+                            while (true){
                                     String str = in.readUTF();  //принимаем сообщение
                                     System.out.println("Client - " + str);
 
                                     //если принята строка /end
                                     if (str.equals("/end")){
                                         //отправляем сообщение только тому,кто прислал /end
-                                        server.broadcastMsgClosed(socket);
+                                        server.broadcastMsgClosed(socket); //так слишком сложно - мы же в нужном нам потоке
+                                        //out.writeUTF("/server Cloused");  //отправляем сообщение только тому,кто прислал /end
+                                        // а удаление слиента делаем в конце блока finally вызовом метода server.unsubscribe()
                                         break; //выходим из бесконечного цикла
                                     }
                                     //отправляем сообщение всем, кто в списке Vector<ClientHandler> clients
@@ -44,7 +58,9 @@ public class ClientHandler {
                             }
                         }catch (IOException e){
                             e.printStackTrace();
-                        }finally {
+//                        } catch (SQLException e) {
+//                            e.printStackTrace();
+                        } finally {
                             try {
                                 in.close();
                             } catch (IOException e) {
@@ -60,6 +76,7 @@ public class ClientHandler {
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
+                            //server.unsubscribe(ClientHandler.this);
                         }
                 }
             }).start();
