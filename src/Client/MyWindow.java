@@ -181,7 +181,7 @@ public class MyWindow extends JFrame  {
             }
         });
 
-        //закрываем программу при нажатии на крестик в правом верхнем углу окна 
+        //закрываем программу при нажатии на крестик в правом верхнем углу окна
         super.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 System.out.println("Выход через закрытие окна");

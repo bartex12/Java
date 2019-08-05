@@ -18,10 +18,10 @@ public class Server  {
         ServerSocket server = null;
 
         try {
-//            //тест
-//            AuthService.connect();  // подключаемся к базе данных
-//            String s = AuthService.getNickByLoginAndPass("login1","pass1");
-//            System.out.println(s);
+            //тест
+            AuthService.connect();  // подключаемся к базе данных
+            String s = AuthService.getNickByLoginAndPass("login1","pass1");
+            System.out.println(s);
 
             server = new ServerSocket(8189);
             System.out.println("Сервер запущен");
@@ -47,7 +47,7 @@ public class Server  {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            // AuthService.disconnect();  //отключаемся от базы данных
+            AuthService.disconnect();  //отключаемся от базы данных
         }
     }
 
@@ -77,6 +77,8 @@ public class Server  {
         }
     }
 
+    //метод заменён на более правильный метод  public void unsubscribe(ClientHandler client),
+    // дополненный функционалом этого метода
     public void broadcastMsgClosed(Socket socket){
         ClientHandler temp = null;
         for (ClientHandler c: clients){
