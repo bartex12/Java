@@ -36,9 +36,16 @@ public class ClientHandler {
 //                                if (str.startsWith("/auth")){
 //                                    String[] tokens = str.split(" ");
 //                                    String newNick = AuthService.getNickByLoginAndPass(tokens[1],tokens[2]);
-//                                    nick = newNick;
+//                                    if (newNick!=null){
+//                                        nick = newNick;
+//                                        //добавляем участника в список участников и сообщаем о новом участнике чата
+//                                        server.subscribe(ClientHandler.this);
+//                                        //server.broadcastMsgBegin(ClientHandler.this);
+//                                        break;
+//                                    }else {
+//                                        sendMsg(" Неверный логин/пароль ");
+//                                    }
 //                                }
-//                                break;
 //                            }
 
                             while (true){

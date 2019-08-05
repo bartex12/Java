@@ -29,8 +29,8 @@ public class Server  {
             while (true){
                 socket = server.accept();
                // clients.add( new ClientHandler(this, socket)); //так было
-                subscribe(new ClientHandler(this, socket)); //так правильно
-                this.broadcastMsgBegin(clients.lastElement());// сообщаем всем о появлении нового участника чата
+                subscribe(new ClientHandler(this, socket)); //так правильно (потом удалить subscribe)
+                //this.broadcastMsgBegin(clients.lastElement());// сообщаем всем о появлении нового участника чата (потом удалить)
                 System.out.println("Новый клиент = " + clients.lastElement()+ " socket = " + socket);
                 System.out.println("Всего клиентов = " + clients.size());
             }
@@ -51,14 +51,6 @@ public class Server  {
         }
     }
 
-    public void broadcastMsgBegin(ClientHandler client){
-        for (ClientHandler c: clients){
-            if (!c.equals(client)){
-                c.sendMsgBegin();
-            }
-        }
-    }
-
     public void broadcastMsg(String msg){
         for (ClientHandler c: clients){
             c.sendMsg(msg);
@@ -67,6 +59,11 @@ public class Server  {
 
     public void subscribe(ClientHandler client) {
         clients.add(client);
+        for (ClientHandler c: clients){
+            if (!c.equals(client)){
+                c.sendMsgBegin();
+            }
+        }
     }
 
     public void unsubscribe(ClientHandler client) {
@@ -77,22 +74,31 @@ public class Server  {
         }
     }
 
-    //метод заменён на более правильный метод  public void unsubscribe(ClientHandler client),
-    // дополненный функционалом этого метода
-    public void broadcastMsgClosed(Socket socket){
-        ClientHandler temp = null;
-        for (ClientHandler c: clients){
-            if (c.getSocket().equals(socket)){
-                c.sendMsgClosed();
-                temp = c;  //иначе исключение про изменение коллекции во время перебора
-            }
-        }
-        clients.remove(temp);
-        System.out.println("Осталось клиентов = " + clients.size());
-        //остальным передаём, что этот покинул чат
-        for(ClientHandler c: clients){
-            c.sendMsgStopped();
-        }
-    }
+    //    //перенёс функционал в метод subscribe
+//    public void broadcastMsgBegin(ClientHandler client){
+//        for (ClientHandler c: clients){
+//            if (!c.equals(client)){
+//                c.sendMsgBegin();
+//            }
+//        }
+//    }
+
+//    //метод заменён на более правильный метод  public void unsubscribe(ClientHandler client),
+//    // дополненный функционалом этого метода
+//    public void broadcastMsgClosed(Socket socket){
+//        ClientHandler temp = null;
+//        for (ClientHandler c: clients){
+//            if (c.getSocket().equals(socket)){
+//                c.sendMsgClosed();
+//                temp = c;  //иначе исключение про изменение коллекции во время перебора
+//            }
+//        }
+//        clients.remove(temp);
+//        System.out.println("Осталось клиентов = " + clients.size());
+//        //остальным передаём, что этот покинул чат
+//        for(ClientHandler c: clients){
+//            c.sendMsgStopped();
+//        }
+//    }
 
 }
