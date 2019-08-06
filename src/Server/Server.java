@@ -18,21 +18,20 @@ public class Server  {
         ServerSocket server = null;
 
         try {
-            //тест
-            AuthService.connect();  // подключаемся к базе данных
-            String s = AuthService.getNickByLoginAndPass("login1","pass1");
-            System.out.println(s);
 
+            AuthService.connect();  // подключаемся к базе данных
             server = new ServerSocket(8189);
             System.out.println("Сервер запущен");
 
             while (true){
                 socket = server.accept();
+                System.out.println("Подключение");
                // clients.add( new ClientHandler(this, socket)); //так было
-                subscribe(new ClientHandler(this, socket)); //так правильно (потом удалить subscribe)
+                new ClientHandler(this, socket);
+                //subscribe(new ClientHandler(this, socket)); //так правильно (потом удалить subscribe)
                 //this.broadcastMsgBegin(clients.lastElement());// сообщаем всем о появлении нового участника чата (потом удалить)
-                System.out.println("Новый клиент = " + clients.lastElement()+ " socket = " + socket);
-                System.out.println("Всего клиентов = " + clients.size());
+                //System.out.println("Новый клиент = " + clients.lastElement()+ " socket = " + socket);
+                //System.out.println("Всего клиентов = " + clients.size());
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -57,6 +56,12 @@ public class Server  {
         }
     }
 
+    public void broadcastPersonalMsg(String personalNick, String personalMessage){
+        for (ClientHandler c: clients){
+        }
+    }
+
+
     public void subscribe(ClientHandler client) {
         clients.add(client);
         for (ClientHandler c: clients){
@@ -64,6 +69,7 @@ public class Server  {
                 c.sendMsgBegin();
             }
         }
+        System.out.println("Всего клиентов = " + clients.size());
     }
 
     public void unsubscribe(ClientHandler client) {

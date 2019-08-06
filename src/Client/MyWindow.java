@@ -25,11 +25,36 @@ public class MyWindow extends JFrame  {
 
     JTextField loginField;
     JPasswordField passField;
+    Box boxReclam;
+    Box  boxAuth;
+    Box boxChat;
+    Box boxInput;
+    private  boolean isAuthorized;
+
+    public void setAuthorized(boolean isAuthorized){
+        this.isAuthorized = isAuthorized;
+        if (!isAuthorized){
+            boxReclam.setVisible(false);
+            boxInput.setVisible(false);
+            boxAuth.setVisible(true);
+
+        }else {
+            boxReclam.setVisible(true);
+            boxInput.setVisible(true);
+            boxAuth.setVisible(false);
+        }
+    }
+
+    public void tryToAuth(){
+        if (socket==null||socket.isClosed()){
+            this.connect();
+        }
+    }
 
     //***************** метод взаимодействия с сервером  ***************
-    public void initialize() {
+    public void connect() {
         try {
-            System.out.println("********** initialize() ***************");
+            System.out.println("********** connect() ***************");
             //подготовительные действия
             socket = new Socket(IP_ADRESS,PORT );  //создаём сокет на основе адреса и порта
             in = new DataInputStream(socket.getInputStream());  //получаем входной поток из сокета
@@ -42,9 +67,22 @@ public class MyWindow extends JFrame  {
                     try {
                         while (true){
                             String str = in.readUTF();
+                            if (str.startsWith("/authok")){
+                                System.out.println("MyWindow connect() authok");
+                                setAuthorized(true);
+                                break;
+                            }else {
+                                jta.append(str + "\n");
+                            }
+                        }
+
+                        while (true){
+                            String str = in.readUTF();
                             jta.append(str + "\n");
                             if (str.equals("/server Cloused")){
-                                System.exit(0);
+                                setAuthorized(false);
+                                //tryToAuth();
+                                //System.exit(0);
                                 break;
                             }
                         }
@@ -78,7 +116,7 @@ public class MyWindow extends JFrame  {
         setResizable(false);
 
         //************ задаём настройки рекламного баннера ****************
-        Box boxReclam = Box.createHorizontalBox();
+        boxReclam = Box.createHorizontalBox();
         JPanel reclamPanel = new JPanel();
         reclamPanel.setPreferredSize(new Dimension(400,75));
         //getContentPane().add(reclamPanel, BorderLayout.NORTH);  //добавляем reclamPanel на MyWindow
@@ -115,11 +153,12 @@ public class MyWindow extends JFrame  {
 
         //************ задаём настройки панели авторизации  ****************
 
-        Box  boxAuth = Box.createVerticalBox();
+        boxAuth = Box.createVerticalBox();
         //настраиваем гор панель логина
         Box box1 = Box.createHorizontalBox();
         JLabel loginLabel = new JLabel("Логин:");
         loginField = new JTextField(15);
+        loginField.setFont(new Font("Dialog", Font.PLAIN, 20));
 
         box1.add(loginLabel);
         box1.add(Box.createHorizontalStrut(10));
@@ -129,6 +168,8 @@ public class MyWindow extends JFrame  {
         Box box2 = Box.createHorizontalBox();
         JLabel passLabel = new JLabel("Пароль:");
         passField = new JPasswordField(15);
+        passField.setFont(new Font("Dialog", Font.PLAIN, 20));
+
         box2.add(passLabel);
         box2.add(Box.createHorizontalStrut(10));
         box2.add(passField);
@@ -139,16 +180,18 @@ public class MyWindow extends JFrame  {
         box3.add(Box.createHorizontalGlue());
         box3.add(input);
 
+
         boxAuth.setBorder(new EmptyBorder(12,12,12,12));
         boxAuth.add(box1);
         boxAuth.add(Box.createVerticalStrut(12));
         boxAuth.add(box2);
         boxAuth.add(Box.createVerticalStrut(20));
         boxAuth.add(box3);
+        boxAuth.setBackground(new Color( 160, 240, 225) ); // не работает почему то
 
 
         //******************настройка окна отображения чата****************
-        Box boxChat = Box.createHorizontalBox();
+        boxChat = Box.createHorizontalBox();
         JPanel centerPanel = new JPanel();
         centerPanel.setBackground(new Color( 160, 240, 225));
         //add(centerPanel, BorderLayout.CENTER);
@@ -163,7 +206,7 @@ public class MyWindow extends JFrame  {
 
 
         //******************настройка строки и кнопки ввода****************
-        Box boxInput = Box.createHorizontalBox();
+        boxInput = Box.createHorizontalBox();
         JPanel bottomPanel = new JPanel();
         bottomPanel.setBackground(new Color( 160, 240, 225));
         bottomPanel.setPreferredSize(new Dimension(1,40));
@@ -224,9 +267,6 @@ public class MyWindow extends JFrame  {
 
         add(boxMain);  //добавляем boxMain на MyWindow
 
-//        add(reclamPanel, BorderLayout.NORTH);
-//        add(centerPanel, BorderLayout.CENTER);
-//        add(bottomPanel, BorderLayout.SOUTH);
 
         //*************  выводим окно чата на экран компа  *************************
         boxReclam.setVisible(false);  //****************
@@ -237,6 +277,29 @@ public class MyWindow extends JFrame  {
         setVisible(true);
 
         //***************** Слушатели событий *************************
+
+        //слушаем кнопку авторизации
+        input.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tryToAuth();
+                try {
+                    if (loginField.getText().trim().length()==0){
+                        System.out.println("Введите логин");
+                        jta.append("Введите логин");
+                    }else if (passField.getText().length()==0){
+                        System.out.println("Введите пароль");
+                        jta.append("Введите пароль");
+                    }else {
+                        out.writeUTF("/auth "+ loginField.getText()+ " " + passField.getText());
+                        loginField.setText("");
+                        passField.setText("");
+                    }
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
 
         //слушаем кнопку Send - при нажатии отправляем текст на сервер
         jb.addActionListener(new ActionListener() {
@@ -261,7 +324,11 @@ public class MyWindow extends JFrame  {
             public void windowClosing(WindowEvent e) {
                 System.out.println("Выход через закрытие окна");
                 try {
-                    out.writeUTF("/end");
+                    if (socket==null||socket.isClosed()){
+                        System.exit(0);
+                    }else {
+                        out.writeUTF("/end");
+                    }
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }

@@ -31,27 +31,38 @@ public class ClientHandler {
                 public void run() {
                         try {
 
-//                            while (true){
-//                                String str = in.readUTF();  //принимаем сообщение
-//                                if (str.startsWith("/auth")){
-//                                    String[] tokens = str.split(" ");
-//                                    String newNick = AuthService.getNickByLoginAndPass(tokens[1],tokens[2]);
-//                                    if (newNick!=null){
-//                                        nick = newNick;
-//                                        //добавляем участника в список участников и сообщаем о новом участнике чата
-//                                        server.subscribe(ClientHandler.this);
-//                                        //server.broadcastMsgBegin(ClientHandler.this);
-//                                        break;
-//                                    }else {
-//                                        sendMsg(" Неверный логин/пароль ");
-//                                    }
-//                                }
-//                            }
+                            while (true){
+                                System.out.println("ClientHandler цикл авторизации ");
+                                String str = in.readUTF();  //принимаем сообщение
+                                if (str.startsWith("/auth")){
+                                    System.out.println("ClientHandler цикл авторизации str = " + str);
+                                    String[] tokens = str.split(" ");
+                                    String newNick = AuthService.getNickByLoginAndPass(tokens[1],tokens[2]);
+                                    if (newNick!=null){
+                                        sendMsg("/authok");
+                                        nick = newNick;
+                                        System.out.println("Получен ник = " + nick);
+                                        //добавляем участника в список участников и сообщаем о новом участнике чата
+                                        server.subscribe(ClientHandler.this);
+                                        //server.broadcastMsgBegin(ClientHandler.this);
+                                        break;
+                                    }else {
+                                        sendMsg(" Неверный логин/пароль ");
+                                    }
+                                }
+                            }
 
 
                             while (true){
                                     String str = in.readUTF();  //принимаем сообщение
                                     System.out.println("Client - " + str);
+
+                                    if (str.startsWith("/w")){
+                                        String[] personal = str.split(" ");
+                                        String personalNick = personal[1];
+                                        String message =  personal[2];
+                                        server.broadcastPersonalMsg(personalNick, message);
+                                    }
 
                                     //если принята строка /end
                                     if (str.equals("/end")){
@@ -62,12 +73,12 @@ public class ClientHandler {
                                         break; //выходим из бесконечного цикла
                                     }
                                     //отправляем сообщение всем, кто в списке Vector<ClientHandler> clients
-                                    server.broadcastMsg(str);
+                                    server.broadcastMsg(nick + ": " + str); //ни фига себе !
                             }
                         }catch (IOException e){
                             e.printStackTrace();
-//                        } catch (SQLException e) {
-//                            e.printStackTrace();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
                         } finally {
                             try {
                                 in.close();
