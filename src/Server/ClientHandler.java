@@ -55,6 +55,7 @@ public class ClientHandler {
                             }
 
 
+                            //      /w nick3 Привет
                             while (true){
                                     String str = in.readUTF();  //принимаем сообщение
                                     System.out.println("Client - " + str);
@@ -71,6 +72,7 @@ public class ClientHandler {
                                         // а удаление слиента делаем в конце блока finally вызовом метода server.unsubscribe()
                                         break; //выходим из бесконечного цикла
                                     }
+                                    
                                     //отправляем сообщение всем, кто в списке Vector<ClientHandler> clients
                                     server.broadcastMsg(nick + ": " + str); //ни фига себе !
                             }
