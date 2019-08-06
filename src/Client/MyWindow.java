@@ -42,6 +42,7 @@ public class MyWindow extends JFrame  {
             boxReclam.setVisible(true);
             boxInput.setVisible(true);
             boxAuth.setVisible(false);
+            jta.setText("Вау!\n");
         }
     }
 
@@ -238,7 +239,7 @@ public class MyWindow extends JFrame  {
         JMenu mFile = new JMenu("File");
         JMenu mEdit = new JMenu("Edit");
         JMenu mHelp = new JMenu("Help");
-        JMenuItem mExit = new JMenuItem("Exit");
+        JMenuItem mExit = new JMenuItem("Disconnect");
         JMenuItem mClear = new JMenuItem("Clear");
         JMenuItem mFaq = new JMenuItem("FAQ");
         JMenuItem mAbout = new JMenuItem("About");

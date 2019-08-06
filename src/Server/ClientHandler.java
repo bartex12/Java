@@ -5,7 +5,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.sql.SQLException;
-import java.util.Vector;
 
 public class ClientHandler {
 
@@ -46,6 +45,7 @@ public class ClientHandler {
                                         //добавляем участника в список участников и сообщаем о новом участнике чата
                                         server.subscribe(ClientHandler.this, nick);
                                         //server.broadcastMsgBegin(ClientHandler.this);
+                                        //AuthService.setSocketByNick(socket.toString(), nick);
                                         break;
 
                                     }else {
@@ -60,10 +60,6 @@ public class ClientHandler {
                                     String str = in.readUTF();  //принимаем сообщение
                                     System.out.println("Client - " + str);
 
-                                    if (str.startsWith("/w")){
-
-                                    }
-
                                     //если принята строка /end
                                     if (str.equals("/end")){
                                         //отправляем сообщение только тому,кто прислал /end
@@ -72,9 +68,17 @@ public class ClientHandler {
                                         // а удаление слиента делаем в конце блока finally вызовом метода server.unsubscribe()
                                         break; //выходим из бесконечного цикла
                                     }
-                                    
+
+                                if (str.startsWith("/w")){
+                                    String[] tokens = str.split(" ");
+                                    String nick = tokens[1];
+                                    String msg = tokens[2];
+                                    server.broadcastPersonalMsg(nick, msg, ClientHandler.this);
+
+                                }else {
                                     //отправляем сообщение всем, кто в списке Vector<ClientHandler> clients
                                     server.broadcastMsg(nick + ": " + str); //ни фига себе !
+                                }
                             }
                         }catch (IOException e){
                             e.printStackTrace();

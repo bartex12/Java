@@ -58,6 +58,27 @@ public class Server  {
         }
     }
 
+    public void broadcastPersonalMsg(String nick, String msg, ClientHandler clientHandler) {
+        System.out.println("broadcastPersonalMsg");
+        boolean isPersonal = false;
+        for (int i = 0; i < persons.size(); i++) {
+            if (persons.get(i).equals(nick)) {
+                ClientHandler client = clients.elementAt(i);
+                client.sendMsg(nick + ": " + msg);
+                isPersonal = true;
+                break;
+            }
+        }
+        if (!isPersonal){
+            clientHandler.sendMsg(" Нет участника с таким ником");
+        }
+    }
+
+     //clientHandler.sendMsg(" Нет участника с таким ником");
+
+    //                System.out.println("nick = " + nick + " number = " + i +
+//                        " ClientHandler = " + client + " сообщение = " +msg );
+
     public boolean isTheSame(String nick){
         for (String persons: persons){
             if (persons.equals(nick)){
