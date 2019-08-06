@@ -120,7 +120,6 @@ public class MyWindow extends JFrame  {
         boxReclam = Box.createHorizontalBox();
         JPanel reclamPanel = new JPanel();
         reclamPanel.setPreferredSize(new Dimension(400,75));
-        //getContentPane().add(reclamPanel, BorderLayout.NORTH);  //добавляем reclamPanel на MyWindow
         reclamPanel.setLayout(new GridLayout(1,3));
         reclamPanel.setBackground(new Color( 160, 240, 225));
 

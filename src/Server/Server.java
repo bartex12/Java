@@ -8,8 +8,8 @@ import java.util.Vector;
 
 public class Server  {
 
-    private Vector<ClientHandler> clients;
-    private Vector<String> persons;
+    private Vector<ClientHandler> clients; //синхро список клиентов
+    private Vector<String> persons; // синхро список ников участников чата (параллельно со списком клиентов)
 
     public Server() throws SQLException {
 
@@ -74,11 +74,6 @@ public class Server  {
         }
     }
 
-     //clientHandler.sendMsg(" Нет участника с таким ником");
-
-    //                System.out.println("nick = " + nick + " number = " + i +
-//                        " ClientHandler = " + client + " сообщение = " +msg );
-
     public boolean isTheSame(String nick){
         for (String persons: persons){
             if (persons.equals(nick)){
@@ -87,8 +82,6 @@ public class Server  {
         }
         return false;
     }
-
-
 
     public void subscribe(ClientHandler client, String nick) {
         clients.add(client);
