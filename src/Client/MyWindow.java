@@ -1,6 +1,7 @@
 package Client;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,6 +22,9 @@ public class MyWindow extends JFrame  {
 
     final String IP_ADRESS = "localhost";
     final int PORT = 8189;
+
+    JTextField loginField;
+    JPasswordField passField;
 
     //***************** метод взаимодействия с сервером  ***************
     public void initialize() {
@@ -72,39 +76,12 @@ public class MyWindow extends JFrame  {
         setBounds(50,200,400,450);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
-        //setLayout(new FlowLayout());
-
-        //setLayout(new FlowLayout());
-
-//        //******************* задаём настройки панели авторизации *****************
-//        JPanel authPanel = new JPanel();
-//        authPanel.setBackground(new Color( 160, 240, 225));
-//        authPanel.setPreferredSize(new Dimension(200,40));
-//        add(authPanel, BorderLayout.SOUTH);  //добавляем authPanel на MyWindow extends JFrame
-//        authPanel.setLayout(new FlowLayout());
-//
-//        JTextField jtfLogin = new JTextField();
-//        jtfLogin.setForeground(Color.BLUE);
-//        jtfLogin.setPreferredSize(new Dimension(100,28));
-//        jtfLogin.setFont(new Font("Dialog", Font.PLAIN, 20));
-//        jtfLogin.setToolTipText("Введите логин");
-//        authPanel.add(jtfLogin);
-//
-//        JTextField jtfPass = new JTextField();
-//        jtfPass.setForeground(Color.BLUE);
-//        jtfPass.setPreferredSize(new Dimension(100,28));
-//        jtfPass.setFont(new Font("Dialog", Font.PLAIN, 20));
-//        jtfPass.setToolTipText("Введите пароль");
-//        authPanel.add(jtfPass);
-//
-//        authPanel.setVisible(true);
-
-
 
         //************ задаём настройки рекламного баннера ****************
+        Box boxReclam = Box.createHorizontalBox();
         JPanel reclamPanel = new JPanel();
-        reclamPanel.setPreferredSize(new Dimension(1,75));
-        getContentPane().add(reclamPanel, BorderLayout.NORTH);  //добавляем reclamPanel на MyWindow extends JFrame
+        reclamPanel.setPreferredSize(new Dimension(400,75));
+        //getContentPane().add(reclamPanel, BorderLayout.NORTH);  //добавляем reclamPanel на MyWindow
         reclamPanel.setLayout(new GridLayout(1,3));
         reclamPanel.setBackground(new Color( 160, 240, 225));
 
@@ -134,31 +111,47 @@ public class MyWindow extends JFrame  {
         jp[2].add(jlab3);
         reclamPanel.add(jp[2]);
 
-        reclamPanel.setVisible(true);  //****************
+        boxReclam.add(reclamPanel);
 
-//
-////************ задаём настройки доп панели ****************
-//        JPanel authPanel = new JPanel();
-//        authPanel.setPreferredSize(new Dimension(1,200));
-//        authPanel.setBackground(new Color( 255, 0, 0));
-//        getContentPane().add(authPanel, BorderLayout.NORTH);
-//        authPanel.setLayout(new BorderLayout());
-//
-////        JTextField jtfAuth = new JTextField();
-////        jtfAuth.setForeground(Color.BLUE);
-////        jtfAuth.setPreferredSize(new Dimension(100,28));
-////        jtfAuth.setFont(new Font("Dialog", Font.PLAIN, 20));
-////        jtfAuth.setToolTipText("Поле ввода текста");
-////
-////        authPanel.add(jtfAuth);
-//
-//        authPanel.setVisible(true);  //****************
+        //************ задаём настройки панели авторизации  ****************
+
+        Box  boxAuth = Box.createVerticalBox();
+        //настраиваем гор панель логина
+        Box box1 = Box.createHorizontalBox();
+        JLabel loginLabel = new JLabel("Логин:");
+        loginField = new JTextField(15);
+
+        box1.add(loginLabel);
+        box1.add(Box.createHorizontalStrut(10));
+        box1.add(loginField);
+
+        //настраиваем гор панель пароля
+        Box box2 = Box.createHorizontalBox();
+        JLabel passLabel = new JLabel("Пароль:");
+        passField = new JPasswordField(15);
+        box2.add(passLabel);
+        box2.add(Box.createHorizontalStrut(10));
+        box2.add(passField);
+
+        //настраиваем гор панель кнопки ввода
+        Box box3 = Box.createHorizontalBox();
+        JButton input  = new JButton("Ввод");
+        box3.add(Box.createHorizontalGlue());
+        box3.add(input);
+
+        boxAuth.setBorder(new EmptyBorder(12,12,12,12));
+        boxAuth.add(box1);
+        boxAuth.add(Box.createVerticalStrut(12));
+        boxAuth.add(box2);
+        boxAuth.add(Box.createVerticalStrut(20));
+        boxAuth.add(box3);
 
 
         //******************настройка окна отображения чата****************
+        Box boxChat = Box.createHorizontalBox();
         JPanel centerPanel = new JPanel();
         centerPanel.setBackground(new Color( 160, 240, 225));
-        add(centerPanel, BorderLayout.CENTER);
+        //add(centerPanel, BorderLayout.CENTER);
         centerPanel.setLayout(new BorderLayout());
         jta = new JTextArea();
         jta.setEditable(false);
@@ -166,14 +159,15 @@ public class MyWindow extends JFrame  {
         JScrollPane jsp = new JScrollPane(jta);
         centerPanel.add(jsp, BorderLayout.CENTER);
 
-        centerPanel.setVisible(true);
+        boxChat.add(centerPanel);
 
 
         //******************настройка строки и кнопки ввода****************
+        Box boxInput = Box.createHorizontalBox();
         JPanel bottomPanel = new JPanel();
         bottomPanel.setBackground(new Color( 160, 240, 225));
         bottomPanel.setPreferredSize(new Dimension(1,40));
-        add(bottomPanel, BorderLayout.SOUTH);
+        //add(bottomPanel, BorderLayout.SOUTH);
         bottomPanel.setLayout(new FlowLayout());
 
         JTextField jtf = new JTextField();
@@ -190,7 +184,8 @@ public class MyWindow extends JFrame  {
         bottomPanel.add(jtf);
         bottomPanel.add(jb);
 
-        bottomPanel.setVisible(true);  //**********
+        boxInput.add(bottomPanel);
+
 
         //****************Блок меню**********************
         JMenuBar menuBar = new JMenuBar();
@@ -218,7 +213,27 @@ public class MyWindow extends JFrame  {
         mHelp.addSeparator();
         mHelp.add(mAbout);
 
+        //************** добавляем созданные панели на MyWindow ***************
+
+        loginLabel.setPreferredSize(passLabel.getPreferredSize());
+        Box boxMain = Box.createVerticalBox();
+        boxMain.add(boxReclam);
+        boxMain.add(boxAuth);
+        boxMain.add(boxChat);
+        boxMain.add(boxInput);
+
+        add(boxMain);  //добавляем boxMain на MyWindow
+
+//        add(reclamPanel, BorderLayout.NORTH);
+//        add(centerPanel, BorderLayout.CENTER);
+//        add(bottomPanel, BorderLayout.SOUTH);
+
         //*************  выводим окно чата на экран компа  *************************
+        boxReclam.setVisible(false);  //****************
+        boxAuth.setVisible(true);  //**********
+        boxChat.setVisible(true);
+        boxInput.setVisible(false);  //**********
+
         setVisible(true);
 
         //***************** Слушатели событий *************************
