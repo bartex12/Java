@@ -286,10 +286,10 @@ public class MyWindow extends JFrame  {
                 try {
                     if (loginField.getText().trim().length()==0){
                         System.out.println("Введите логин");
-                        jta.append("Введите логин");
+                        jta.append("Введите логин \n");
                     }else if (passField.getText().length()==0){
                         System.out.println("Введите пароль");
-                        jta.append("Введите пароль");
+                        jta.append("Введите пароль \n");
                     }else {
                         out.writeUTF("/auth "+ loginField.getText()+ " " + passField.getText());
                         loginField.setText("");

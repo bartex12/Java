@@ -5,6 +5,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.sql.SQLException;
+import java.util.Vector;
 
 public class ClientHandler {
 
@@ -38,14 +39,15 @@ public class ClientHandler {
                                     System.out.println("ClientHandler цикл авторизации str = " + str);
                                     String[] tokens = str.split(" ");
                                     String newNick = AuthService.getNickByLoginAndPass(tokens[1],tokens[2]);
-                                    if (newNick!=null){
+                                    if ((newNick!=null) && (!server.isTheSame(newNick))){
                                         sendMsg("/authok");
                                         nick = newNick;
                                         System.out.println("Получен ник = " + nick);
                                         //добавляем участника в список участников и сообщаем о новом участнике чата
-                                        server.subscribe(ClientHandler.this);
+                                        server.subscribe(ClientHandler.this, nick);
                                         //server.broadcastMsgBegin(ClientHandler.this);
                                         break;
+
                                     }else {
                                         sendMsg(" Неверный логин/пароль ");
                                     }
@@ -58,10 +60,7 @@ public class ClientHandler {
                                     System.out.println("Client - " + str);
 
                                     if (str.startsWith("/w")){
-                                        String[] personal = str.split(" ");
-                                        String personalNick = personal[1];
-                                        String message =  personal[2];
-                                        server.broadcastPersonalMsg(personalNick, message);
+
                                     }
 
                                     //если принята строка /end
@@ -95,7 +94,7 @@ public class ClientHandler {
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-                            server.unsubscribe(ClientHandler.this);
+                            server.unsubscribe(ClientHandler.this, nick);
                         }
                 }
             }).start();
@@ -120,17 +119,17 @@ public class ClientHandler {
         }
     }
 
-    public void sendMsgStopped(){
+    public void sendMsgStopped(String nick){
         try {
-            out.writeUTF( " Участник вышел из чата");  //отправляем сообщение
+            out.writeUTF( nick + " вышел из чата");  //отправляем сообщение
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void sendMsgBegin(){
+    public void sendMsgBegin(String nick){
         try {
-            out.writeUTF(" Новый участник подключился к чату");  //отправляем сообщение
+            out.writeUTF(nick + " подключился к чату");  //отправляем сообщение
         } catch (IOException e) {
             e.printStackTrace();
         }

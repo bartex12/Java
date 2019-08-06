@@ -9,11 +9,13 @@ import java.util.Vector;
 public class Server  {
 
     private Vector<ClientHandler> clients;
-
+    private Vector<String> persons;
 
     public Server() throws SQLException {
 
         clients =  new Vector<>();
+        persons = new Vector<>();
+
         Socket socket = null;
         ServerSocket server = null;
 
@@ -56,27 +58,34 @@ public class Server  {
         }
     }
 
-    public void broadcastPersonalMsg(String personalNick, String personalMessage){
-        for (ClientHandler c: clients){
+    public boolean isTheSame(String nick){
+        for (String persons: persons){
+            if (persons.equals(nick)){
+                return true;
+            }
         }
+        return false;
     }
 
 
-    public void subscribe(ClientHandler client) {
+
+    public void subscribe(ClientHandler client, String nick) {
         clients.add(client);
+        persons.add(nick);
         for (ClientHandler c: clients){
             if (!c.equals(client)){
-                c.sendMsgBegin();
+                c.sendMsgBegin(nick);
             }
         }
         System.out.println("Всего клиентов = " + clients.size());
     }
 
-    public void unsubscribe(ClientHandler client) {
+    public void unsubscribe(ClientHandler client, String nick) {
         clients.remove(client);
+        persons.remove(nick);
         System.out.println("Осталось клиентов = " + clients.size());
         for(ClientHandler c: clients){
-            c.sendMsgStopped();
+            c.sendMsgStopped(nick);
         }
     }
 
