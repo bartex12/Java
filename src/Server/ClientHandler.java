@@ -48,6 +48,7 @@ public class ClientHandler {
 //                                }
 //                            }
 
+
                             while (true){
                                     String str = in.readUTF();  //принимаем сообщение
                                     System.out.println("Client - " + str);
