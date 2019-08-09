@@ -25,24 +25,35 @@ public class MyWindow extends JFrame  {
 
     JTextField loginField;
     JPasswordField passField;
+    JLabel anotherLabel;
+    JLabel myLabel;
+
+    String nick = "";
+
     Box boxReclam;
     Box  boxAuth;
     Box boxChat;
+    Box boxChatNew;
     Box boxInput;
+
     private  boolean isAuthorized;
 
     public void setAuthorized(boolean isAuthorized){
         this.isAuthorized = isAuthorized;
         if (!isAuthorized){
-            boxReclam.setVisible(false);
-            boxInput.setVisible(false);
             boxAuth.setVisible(true);
+            boxChat.setVisible(true);
+            boxReclam.setVisible(false);
+            boxChatNew.setVisible(false);
+            boxInput.setVisible(false);
 
         }else {
-            boxReclam.setVisible(true);
-            boxInput.setVisible(true);
             boxAuth.setVisible(false);
-            //jta.setText("Вау!\n");
+            boxChat.setVisible(false);
+            boxReclam.setVisible(true);
+            boxChatNew.setVisible(true);
+            boxInput.setVisible(true);
+
         }
     }
 
@@ -66,10 +77,13 @@ public class MyWindow extends JFrame  {
                 @Override
                 public void run() {
                     try {
+                        //блок авторизации
                         while (true){
                             String str = in.readUTF();
                             if (str.startsWith("/authok")){
-                                System.out.println("MyWindow connect() authok");
+                                String[] newNick  = str.split(" ");
+                                nick = newNick[1];
+                                System.out.println("MyWindow connect() authok" + " nick = " + nick);
                                 setAuthorized(true);
                                 break;
                             }else {
@@ -77,9 +91,40 @@ public class MyWindow extends JFrame  {
                             }
                         }
 
+                        ///блок обработки сообщений
                         while (true){
                             String str = in.readUTF();
-                            jta.append(str + "\n");
+                            if (!str.startsWith("/")){
+                                String[] message = str.split(" ", 2);
+                                if (message[0].equals(nick)){
+
+                                    Box boxMyMsg = Box.createHorizontalBox();
+                                    myLabel = new JLabel();
+                                    myLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
+                                    myLabel.setText(message[1]);
+
+                                    boxMyMsg.add(Box.createHorizontalGlue());
+                                    boxMyMsg.add(myLabel);
+
+                                    boxChatNew.add(boxMyMsg);
+
+                                    //myLabel.setText(message[1]);
+                                }else {
+                                    Box boxAnotherMsg = Box.createHorizontalBox();
+                                    anotherLabel = new JLabel();
+                                    anotherLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
+                                    anotherLabel.setText(str);
+
+                                    boxAnotherMsg.add(anotherLabel);
+                                    boxAnotherMsg.add(Box.createHorizontalGlue());
+
+                                    boxChatNew.add(boxAnotherMsg);
+                                    
+
+                                    //anotherLabel.setText(str);
+                                }
+                            }
+                            //jta.append(str + "\n");
                             if (str.equals("/server Cloused")){
                                 setAuthorized(false);
                                 //tryToAuth();
@@ -108,6 +153,8 @@ public class MyWindow extends JFrame  {
     public MyWindow() {
         //**************задаём общие настройки**************
         super("Hello");
+
+
         ImageIcon imageWindow = new ImageIcon("src/smile.png");
         //System.out.println(" Ширина иконки приложения = " + imageWindow.getIconWidth());
         this.setIconImage(imageWindow.getImage());
@@ -154,6 +201,8 @@ public class MyWindow extends JFrame  {
         //************ задаём настройки панели авторизации  ****************
 
         boxAuth = Box.createVerticalBox();
+        boxAuth.setOpaque(true);
+        boxAuth.setBackground(new Color( 160, 240, 225));
         //настраиваем гор панель логина
         Box box1 = Box.createHorizontalBox();
         JLabel loginLabel = new JLabel("Логин:");
@@ -204,6 +253,32 @@ public class MyWindow extends JFrame  {
 
         boxChat.add(centerPanel);
 
+
+        //******************настройка окна отображения чата New  ****************
+        boxChatNew = Box.createVerticalBox();
+        boxChatNew.setPreferredSize(new Dimension(400, 275));
+        boxChatNew.setOpaque(true);
+        boxChatNew.setBackground(new Color(255,255,255));
+
+        Box boxMyMsg = Box.createHorizontalBox();
+        myLabel = new JLabel();
+        myLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
+        myLabel.setText(" ");
+
+       boxMyMsg.add(Box.createHorizontalGlue());
+       boxMyMsg.add(myLabel);
+
+        boxChatNew.add(boxMyMsg);
+
+        Box boxAnotherMsg = Box.createHorizontalBox();
+        anotherLabel = new JLabel();
+        anotherLabel.setText(" ");
+        anotherLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
+
+        boxAnotherMsg.add(anotherLabel);
+        boxAnotherMsg.add(Box.createHorizontalGlue());
+
+        boxChatNew.add(boxAnotherMsg);
 
         //******************настройка строки и кнопки ввода****************
         boxInput = Box.createHorizontalBox();
@@ -263,6 +338,7 @@ public class MyWindow extends JFrame  {
         boxMain.add(boxReclam);
         boxMain.add(boxAuth);
         boxMain.add(boxChat);
+        boxMain.add(boxChatNew);
         boxMain.add(boxInput);
 
         add(boxMain);  //добавляем boxMain на MyWindow
@@ -272,6 +348,7 @@ public class MyWindow extends JFrame  {
         boxReclam.setVisible(false);  //****************
         boxAuth.setVisible(true);  //**********
         boxChat.setVisible(true);
+        boxChatNew.setVisible(false);
         boxInput.setVisible(false);  //**********
 
         setVisible(true);

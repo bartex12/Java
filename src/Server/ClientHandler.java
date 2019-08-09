@@ -42,7 +42,7 @@ public class ClientHandler {
                                     String newNick = AuthService.getNickByLoginAndPass(tokens[1],tokens[2]);
                                     if (newNick!=null){
                                         if (!server.isTheSame(newNick)){
-                                            sendMsg("/authok");
+                                            sendMsg("/authok " + newNick);
                                             nick = newNick;
                                             System.out.println("Получен ник = " + nick);
                                             //добавляем участника в список участников и сообщаем о новом участнике чата
