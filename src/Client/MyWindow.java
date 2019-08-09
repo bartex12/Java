@@ -20,6 +20,8 @@ public class MyWindow extends JFrame  {
     DataInputStream in;
     DataOutputStream out;
 
+    String myNick = "";
+
     final String IP_ADRESS = "localhost";
     final int PORT = 8189;
 
@@ -66,10 +68,18 @@ public class MyWindow extends JFrame  {
                 @Override
                 public void run() {
                     try {
+                        //блок авторизации
                         while (true){
                             String str = in.readUTF();
                             if (str.startsWith("/authok")){
                                 System.out.println("MyWindow connect() authok");
+                                String[] myNickInArray = str.split(" ", 2);
+                                if (myNickInArray.length>=2){
+                                    myNick = myNickInArray[1];
+                                }
+                                jta.append(str + "\n");
+                                jta.append(myNick + "\n");
+
                                 setAuthorized(true);
                                 break;
                             }else {
@@ -77,9 +87,22 @@ public class MyWindow extends JFrame  {
                             }
                         }
 
+                        //блок обработки сообщений
                         while (true){
                             String str = in.readUTF();
-                            jta.append(str + "\n");
+                            //****************************************
+                            if (!str.startsWith("/")){
+                                String[] myAnother = str.split(" ", 2);
+                                String whoWrite = myAnother[0];
+                                //если это не моё сообщение то
+                                if (!whoWrite.equals(myNick)){
+                                    jta.append(str + "\n");
+                                    //если это моё сообщение, то добавляем ***
+                                }else {
+                                    jta.append("*** " + str + " ***" + "\n");
+                                }
+                            }
+                            //***********************************
                             if (str.equals("/server Cloused")){
                                 setAuthorized(false);
                                 //tryToAuth();
