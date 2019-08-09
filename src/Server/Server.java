@@ -58,13 +58,12 @@ public class Server  {
         }
     }
 
-    public void broadcastPersonalMsg(String nick, String msg, ClientHandler clientHandler) {
+    public void broadcastPersonalMsg(String nickTo, String msg, ClientHandler clientHandler) {
         System.out.println("broadcastPersonalMsg");
         boolean isPersonal = false;
-        for (int i = 0; i < persons.size(); i++) {
-            if (persons.get(i).equals(nick)) {
-                ClientHandler client = clients.elementAt(i);
-                client.sendMsg(nick + ": " + msg);
+        for (ClientHandler client: clients){
+            if (client.getNick().equals(nickTo)){
+                client.sendMsg("Личка от " + clientHandler.getNick() + ": " + msg);
                 isPersonal = true;
                 break;
             }

@@ -12,10 +12,11 @@ public class ClientHandler {
     private DataInputStream in;
     private DataOutputStream out;
     private Server server;
+
     private String nick;
 
-    public Socket getSocket() {
-        return socket;
+    public String getNick() {
+        return nick;
     }
 
     public ClientHandler(Server server, Socket socket){
@@ -68,14 +69,14 @@ public class ClientHandler {
                                     }
 
                                 if (str.startsWith("/w")){
-                                    String[] tokens = str.split(" ");
+                                    String[] tokens = str.split(" ", 3);  //массив из 3 элементов
                                     String nick = tokens[1];
                                     String msg = tokens[2];
                                     server.broadcastPersonalMsg(nick, msg, ClientHandler.this);
 
                                 }else {
                                     //отправляем сообщение всем, кто в списке Vector<ClientHandler> clients
-                                    server.broadcastMsg(nick + ": " + str); //ни фига себе !
+                                    server.broadcastMsg(nick + " пишет: " + str); //ни фига себе !
                                 }
                             }
                         }catch (IOException e){
