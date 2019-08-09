@@ -86,7 +86,7 @@ public class Server  {
             if (!c.equals(client)){
                 c.sendMsgBegin(nick);
             }else {
-                c.sendMsg(c.getNick() + " Добро пожаловать в чат!");
+                c.sendMsg(c.getNick() + " :" + " Добро пожаловать в чат!");
             }
         }
         System.out.println("Всего клиентов = " + clients.size());

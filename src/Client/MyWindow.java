@@ -28,7 +28,9 @@ public class MyWindow extends JFrame  {
     JLabel anotherLabel;
     JLabel myLabel;
 
-    JList<String>  list;
+    JList  list;
+    JScrollPane myScroll;
+    DefaultListModel model;
 
     String nick = "";
 
@@ -46,8 +48,9 @@ public class MyWindow extends JFrame  {
             boxAuth.setVisible(true);
             boxChat.setVisible(true);
             boxReclam.setVisible(false);
+            myScroll.setVisible(false);
             //boxChatNew.setVisible(false);
-            list.setVisible(false);
+           // list.setVisible(false);
             boxInput.setVisible(false);
 
         }else {
@@ -55,7 +58,8 @@ public class MyWindow extends JFrame  {
             boxChat.setVisible(false);
             boxReclam.setVisible(true);
             //boxChatNew.setVisible(true);
-            list.setVisible(true);
+            //list.setVisible(true);
+            myScroll.setVisible(true);
             boxInput.setVisible(true);
 
         }
@@ -99,40 +103,16 @@ public class MyWindow extends JFrame  {
                         while (true){
                             String str = in.readUTF();
                             if (!str.startsWith("/")){
-                                String[] message = str.split(" ", 2);
+                                String[] message = str.split(" ", 3);
                                 if (message[0].equals(nick)){
+//                                    DefaultListCellRenderer renderer =  (DefaultListCellRenderer)list.getCellRenderer();
+//                                    renderer.setHorizontalAlignment(JLabel.RIGHT);
+                                    model.addElement(message[2]);
 
-//                                    Box boxMyMsg = Box.createHorizontalBox();
-//                                    myLabel = new JLabel();
-//                                    myLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
-//                                    myLabel.setText(message[1]);
-//
-//                                    boxMyMsg.add(Box.createHorizontalGlue());
-//                                    boxMyMsg.add(myLabel);
-//
-//                                    boxChatNew.add(boxMyMsg);
-
-                                    //myLabel.setText(message[1]);
-                                    JLabel label = new JLabel();
-                                    label.setText(message[1]);
-                                    list.add(label);
                                 }else {
-//                                    Box boxAnotherMsg = Box.createHorizontalBox();
-//                                    anotherLabel = new JLabel();
-//                                    anotherLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
-//                                    anotherLabel.setText(str);
-//
-//                                    boxAnotherMsg.add(anotherLabel);
-//                                    boxAnotherMsg.add(Box.createHorizontalGlue());
-//
-//                                    boxChatNew.add(boxAnotherMsg);
-
-
-                                    //anotherLabel.setText(str);
-
-                                    JLabel label = new JLabel();
-                                    label.setText(str);
-                                    list.add(label);
+//                                    DefaultListCellRenderer renderer =  (DefaultListCellRenderer)list.getCellRenderer();
+//                                    renderer.setHorizontalAlignment(JLabel.LEFT);
+                                    model.addElement("<html><font color = red>" + str);
                                 }
                             }
                             //jta.append(str + "\n");
@@ -267,43 +247,13 @@ public class MyWindow extends JFrame  {
 
         //******************настройка окна отображения чата New  ****************
 
-        list = new JList<>();
-        getContentPane().setLayout(new FlowLayout());
-        getContentPane().add(new JScrollPane(list));
-        list.setPreferredSize(new Dimension(400, 250));
-
-        JLabel labelMy = new JLabel();
-        labelMy.setText(" ");
-        list.add(labelMy);
-
-        JLabel label1Another = new JLabel();
-        label1Another.setText(" ");
-        list.add(label1Another);
-
-//        boxChatNew = Box.createVerticalBox();
-//        boxChatNew.setPreferredSize(new Dimension(400, 275));
-//        boxChatNew.setOpaque(true);
-//        boxChatNew.setBackground(new Color(255,255,255));
-//
-//        Box boxMyMsg = Box.createHorizontalBox();
-//        myLabel = new JLabel();
-//        myLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
-//        myLabel.setText(" ");
-//
-//       boxMyMsg.add(Box.createHorizontalGlue());
-//       boxMyMsg.add(myLabel);
-//
-//        boxChatNew.add(boxMyMsg);
-//
-//        Box boxAnotherMsg = Box.createHorizontalBox();
-//        anotherLabel = new JLabel();
-//        anotherLabel.setText(" ");
-//        anotherLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
-//
-//        boxAnotherMsg.add(anotherLabel);
-//        boxAnotherMsg.add(Box.createHorizontalGlue());
-//
-//        boxChatNew.add(boxAnotherMsg);
+       model = new DefaultListModel();
+       list = new JList(model);
+       myScroll = new JScrollPane(list);
+       myScroll.setPreferredSize(new Dimension(400,250));
+//        model.addElement("111111111");
+//        model.addElement("22222222222");
+//        model.addElement("333333333333");
 
         //******************настройка строки и кнопки ввода****************
         boxInput = Box.createHorizontalBox();
@@ -364,8 +314,11 @@ public class MyWindow extends JFrame  {
         boxMain.add(boxAuth);
         boxMain.add(boxChat);
         //boxMain.add(boxChatNew);
-        boxMain.add(list);
+        //boxMain.add(list);
+        boxMain.add(myScroll);
         boxMain.add(boxInput);
+
+
 
         add(boxMain);  //добавляем boxMain на MyWindow
 
@@ -374,7 +327,8 @@ public class MyWindow extends JFrame  {
         boxReclam.setVisible(false);  //****************
         boxAuth.setVisible(true);  //**********
         boxChat.setVisible(true);
-        list.setVisible(false);
+        //list.setVisible(false);
+        myScroll.setVisible(false);
         //boxChatNew.setVisible(false);
         boxInput.setVisible(false);  //**********
 
@@ -478,3 +432,77 @@ public class MyWindow extends JFrame  {
     }
 }
 
+//                                    Box boxAnotherMsg = Box.createHorizontalBox();
+//                                    anotherLabel = new JLabel();
+//                                    anotherLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
+//                                    anotherLabel.setText(str);
+//
+//                                    boxAnotherMsg.add(anotherLabel);
+//                                    boxAnotherMsg.add(Box.createHorizontalGlue());
+//
+//                                    boxChatNew.add(boxAnotherMsg);
+
+
+//anotherLabel.setText(str);
+
+//                                    JLabel label = new JLabel();
+//                                    label.setText(str);
+//                                    list.add(label);
+
+
+
+    //Box boxMyMsg = Box.createHorizontalBox();
+//                                    myLabel = new JLabel();
+//                                    myLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
+//                                    myLabel.setText(message[1]);
+//
+//                                    boxMyMsg.add(Box.createHorizontalGlue());
+//                                    boxMyMsg.add(myLabel);
+//
+//                                    boxChatNew.add(boxMyMsg);
+
+//myLabel.setText(message[1]);
+//                                    JLabel label = new JLabel();
+//                                    label.setText(message[1]);
+//                                    list.add(label);
+
+
+//        list.setVisibleRowCount(10);
+//        getContentPane().setLayout(new FlowLayout());
+//        getContentPane().add(new JScrollPane(list));
+//        list.setPreferredSize(new Dimension(400, 250));
+//        list.setOpaque(true);
+//        list.setBackground(Color.WHITE);
+
+//        JLabel labelMy = new JLabel();
+//        labelMy.setText("aaaaaaaaaaaaaa ");
+//        list.add(labelMy);
+//
+//        JLabel label1Another = new JLabel();
+//        label1Another.setText(" ddddddddddddddddddddd");
+//        list.add(label1Another);
+
+//        boxChatNew = Box.createVerticalBox();
+//        boxChatNew.setPreferredSize(new Dimension(400, 275));
+//        boxChatNew.setOpaque(true);
+//        boxChatNew.setBackground(new Color(255,255,255));
+//
+//        Box boxMyMsg = Box.createHorizontalBox();
+//        myLabel = new JLabel();
+//        myLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
+//        myLabel.setText(" ");
+//
+//       boxMyMsg.add(Box.createHorizontalGlue());
+//       boxMyMsg.add(myLabel);
+//
+//        boxChatNew.add(boxMyMsg);
+//
+//        Box boxAnotherMsg = Box.createHorizontalBox();
+//        anotherLabel = new JLabel();
+//        anotherLabel.setText(" ");
+//        anotherLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
+//
+//        boxAnotherMsg.add(anotherLabel);
+//        boxAnotherMsg.add(Box.createHorizontalGlue());
+//
+//        boxChatNew.add(boxAnotherMsg);
