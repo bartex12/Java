@@ -72,6 +72,7 @@ public class Server  {
             clientHandler.sendMsg(" Нет участника с ником: " + nickTo);
         }
 
+        //метод заменён на такой же с оператором break с меткой
 //        boolean isPersonal = false;
 //        for (ClientHandler client: clients){
 //            if (client.getNick().equals(nickTo)){
@@ -86,11 +87,17 @@ public class Server  {
     }
 
     public boolean isTheSame(String nick){
-        for (String persons: persons){
-            if (persons.equals(nick)){
+
+        for (ClientHandler client: clients){
+            if (client.getNick().equals(nick)){
                 return true;
             }
         }
+//        for (String persons: persons){
+//            if (persons.equals(nick)){
+//                return true;
+//            }
+//        }
         return false;
     }
 

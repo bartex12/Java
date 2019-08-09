@@ -32,6 +32,7 @@ public class ClientHandler {
                 public void run() {
                         try {
 
+                            //блок авторизации
                             while (true){
                                 System.out.println("ClientHandler цикл авторизации ");
                                 String str = in.readUTF();  //принимаем сообщение
@@ -39,26 +40,27 @@ public class ClientHandler {
                                     System.out.println("ClientHandler цикл авторизации str = " + str);
                                     String[] tokens = str.split(" ");
                                     String newNick = AuthService.getNickByLoginAndPass(tokens[1],tokens[2]);
-                                    if ((newNick!=null) && (!server.isTheSame(newNick))){
-                                        sendMsg("/authok");
-                                        nick = newNick;
-                                        System.out.println("Получен ник = " + nick);
-                                        //добавляем участника в список участников и сообщаем о новом участнике чата
-                                        server.subscribe(ClientHandler.this, nick);
-                                        //server.broadcastMsgBegin(ClientHandler.this);
-                                        //AuthService.setSocketByNick(socket.toString(), nick);
-                                        break;
-
+                                    if (newNick!=null){
+                                        if (!server.isTheSame(newNick)){
+                                            sendMsg("/authok");
+                                            nick = newNick;
+                                            System.out.println("Получен ник = " + nick);
+                                            //добавляем участника в список участников и сообщаем о новом участнике чата
+                                            server.subscribe(ClientHandler.this, nick);
+                                            break;
+                                        }else {
+                                            sendMsg(" Такой логин/пароль уже используется");
+                                        }
                                     }else {
                                         sendMsg(" Неверный логин/пароль ");
                                     }
                                 }
                             }
 
+                            // блок обработки сообщений в чате
                             while (true){
                                     String str = in.readUTF();  //принимаем сообщение
                                     System.out.println("Client - " + str);
-
                                     //если принята строка /end
                                     if (str.equals("/end")){
                                         //отправляем сообщение только тому,кто прислал /end
