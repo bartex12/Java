@@ -60,17 +60,29 @@ public class Server  {
 
     public void broadcastPersonalMsg(String nickTo, String msg, ClientHandler clientHandler) {
         System.out.println("broadcastPersonalMsg");
-        boolean isPersonal = false;
-        for (ClientHandler client: clients){
-            if (client.getNick().equals(nickTo)){
-                client.sendMsg("Личка от " + clientHandler.getNick() + ": " + msg);
-                isPersonal = true;
-                break;
+        //попробую оператор break с меткой
+        personalIs:
+        {
+            for (ClientHandler client : clients) {
+                if (client.getNick().equals(nickTo)) {
+                    client.sendMsg("Личка от " + clientHandler.getNick() + ": " + msg);
+                    break personalIs;
+                }
             }
+            clientHandler.sendMsg(" Нет участника с ником: " + nickTo);
         }
-        if (!isPersonal){
-            clientHandler.sendMsg(" Нет участника с таким ником");
-        }
+
+//        boolean isPersonal = false;
+//        for (ClientHandler client: clients){
+//            if (client.getNick().equals(nickTo)){
+//                client.sendMsg("Личка от " + clientHandler.getNick() + ": " + msg);
+//                isPersonal = true;
+//                break;
+//            }
+//        }
+//        if (!isPersonal){
+//            clientHandler.sendMsg(" Нет участника с таким ником");
+//        }
     }
 
     public boolean isTheSame(String nick){
