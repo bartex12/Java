@@ -9,12 +9,12 @@ import java.util.Vector;
 public class Server  {
 
     private Vector<ClientHandler> clients; //синхро список клиентов
-    private Vector<String> persons; // синхро список ников участников чата (параллельно со списком клиентов)
+   // private Vector<String> persons; // синхро список ников участников чата (параллельно со списком клиентов)
 
     public Server() throws SQLException {
 
         clients =  new Vector<>();
-        persons = new Vector<>();
+       // persons = new Vector<>();
 
         Socket socket = null;
         ServerSocket server = null;
@@ -66,6 +66,7 @@ public class Server  {
             for (ClientHandler client : clients) {
                 if (client.getNick().equals(nickTo)) {
                     client.sendMsg("Личка от " + clientHandler.getNick() + ": " + msg);
+                    clientHandler.sendMsg("В личку " + nickTo + " : " + msg);
                     break personalIs;
                 }
             }
@@ -103,10 +104,12 @@ public class Server  {
 
     public void subscribe(ClientHandler client, String nick) {
         clients.add(client);
-        persons.add(nick);
+        //persons.add(nick);
         for (ClientHandler c: clients){
             if (!c.equals(client)){
                 c.sendMsgBegin(nick);
+            }else {
+                c.sendMsg(c.getNick() + " Добро пожаловать в чат!");
             }
         }
         System.out.println("Всего клиентов = " + clients.size());
@@ -114,7 +117,7 @@ public class Server  {
 
     public void unsubscribe(ClientHandler client, String nick) {
         clients.remove(client);
-        persons.remove(nick);
+        //persons.remove(nick);
         System.out.println("Осталось клиентов = " + clients.size());
         for(ClientHandler c: clients){
             c.sendMsgStopped(nick);

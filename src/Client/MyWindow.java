@@ -42,7 +42,7 @@ public class MyWindow extends JFrame  {
             boxReclam.setVisible(true);
             boxInput.setVisible(true);
             boxAuth.setVisible(false);
-            jta.setText("Вау!\n");
+            //jta.setText("Вау!\n");
         }
     }
 
