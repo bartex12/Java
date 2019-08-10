@@ -78,7 +78,7 @@ public class ClientHandler {
 
                                 }else {
                                     //отправляем сообщение всем, кто в списке Vector<ClientHandler> clients
-                                    server.broadcastMsg(nick + " пишет: " + str); //ни фига себе !
+                                    server.broadcastMsg(nick + " : " + str); //ни фига себе !
                                 }
                             }
                         }catch (IOException e){

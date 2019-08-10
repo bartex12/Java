@@ -107,12 +107,10 @@ public class MyWindow extends JFrame  {
                                 if (message[0].equals(nick)){
 //                                    DefaultListCellRenderer renderer =  (DefaultListCellRenderer)list.getCellRenderer();
 //                                    renderer.setHorizontalAlignment(JLabel.RIGHT);
-                                    model.addElement(message[2]);
-
+                                    model.addElement("                                             " +  message[2]);
                                 }else {
-//                                    DefaultListCellRenderer renderer =  (DefaultListCellRenderer)list.getCellRenderer();
-//                                    renderer.setHorizontalAlignment(JLabel.LEFT);
-                                    model.addElement("<html><font color = red>" + str);
+                                   // model.addElement(str);
+                                    model.addElement("<html><font color = blue>"+str);
                                 }
                             }
                             //jta.append(str + "\n");
@@ -249,11 +247,9 @@ public class MyWindow extends JFrame  {
 
        model = new DefaultListModel();
        list = new JList(model);
+        list.setSelectionModel(new NoSelectionModel());
        myScroll = new JScrollPane(list);
        myScroll.setPreferredSize(new Dimension(400,250));
-//        model.addElement("111111111");
-//        model.addElement("22222222222");
-//        model.addElement("333333333333");
 
         //******************настройка строки и кнопки ввода****************
         boxInput = Box.createHorizontalBox();
@@ -264,7 +260,7 @@ public class MyWindow extends JFrame  {
         bottomPanel.setLayout(new FlowLayout());
 
         JTextField jtf = new JTextField();
-        jtf.setForeground(Color.BLUE);
+        //jtf.setForeground(Color.BLUE);
         jtf.setPreferredSize(new Dimension(280,28));
         jtf.setFont(new Font("Dialog", Font.PLAIN, 20));
         jtf.setToolTipText("Поле ввода текста");
@@ -426,9 +422,21 @@ public class MyWindow extends JFrame  {
         mClear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                jta.setText("");
+                //jta.setText("");
+                model.removeAllElements();
             }
         });
+    }
+
+    private static class NoSelectionModel extends DefaultListSelectionModel {
+        @Override
+        public void setAnchorSelectionIndex(final int anchorIndex) {}
+        @Override
+        public void setLeadAnchorNotificationEnabled(final boolean flag) {}
+        @Override
+        public void setLeadSelectionIndex(final int leadIndex) {}
+        @Override
+        public void setSelectionInterval(final int index0, final int index1) { }
     }
 }
 
