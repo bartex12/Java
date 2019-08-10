@@ -5,6 +5,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClientHandler {
 
@@ -12,16 +14,21 @@ public class ClientHandler {
     private DataInputStream in;
     private DataOutputStream out;
     private Server server;
-
+    List<String> blackList;
     private String nick;
 
     public String getNick() {
         return nick;
     }
 
+    public boolean checkBlackList(String nick) {
+        return blackList.contains(nick);
+    }
+
     public ClientHandler(Server server, Socket socket){
 
         try {
+            this.blackList = new ArrayList<>();
             this.socket = socket;
             this.server = server;
             this.in = new DataInputStream(socket.getInputStream());
@@ -39,7 +46,8 @@ public class ClientHandler {
                                 if (str.startsWith("/auth")){
                                     System.out.println("ClientHandler цикл авторизации str = " + str);
                                     String[] tokens = str.split(" ");
-                                    String newNick = AuthService.getNickByLoginAndPass(tokens[1],tokens[2]);
+                                    int hash = tokens[2].hashCode();
+                                    String newNick = AuthService.getNickByLoginAndPass(tokens[1],hash);
                                     if (newNick!=null){
                                         if (!server.isTheSame(newNick)){
                                             sendMsg("/authok " + newNick);
@@ -76,9 +84,22 @@ public class ClientHandler {
                                     String msg = tokens[2];
                                     server.broadcastPersonalMsg(nick, msg, ClientHandler.this);
 
+                                }else if (str.startsWith("/blacklist")) {
+                                    String[] tokens = str.split(" ");
+                                    //blackList.add(tokens[1]);
+                                    AuthService.addNickToBlacklist(nick,tokens[1]);
+                                    sendMsg("Вы добавили пользователя " + tokens[1] + " в черный список");
+                                    blackList =  AuthService.getNicksFromBlacklist(nick);
+                                    String s = getBlacklistString(blackList);
+                                    //sendMsg("В чёрном списке: " + s);
+                                    System.out.println(nick + " имеет в  чёрном списке: " + s);
                                 }else {
+                                    // чтобы легче ориентироваться в чёрных списках
+                                    blackList =  AuthService.getNicksFromBlacklist(nick);
+                                    String s = getBlacklistString(blackList);
+                                    System.out.println(nick + " имеет в  чёрном списке: " + s);
                                     //отправляем сообщение всем, кто в списке Vector<ClientHandler> clients
-                                    server.broadcastMsg(nick + " : " + str); //ни фига себе !
+                                    server.broadcastMsg(ClientHandler.this, nick + " : " + str); //ни фига себе !
                                 }
                             }
                         }catch (IOException e){
@@ -140,5 +161,13 @@ public class ClientHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static String getBlacklistString(List<String> blackList ){
+        String s = "";
+        for (int i = 0; i<blackList.size(); i++){
+            s += blackList.get(i) + " ";
+        }
+        return s;
     }
 }

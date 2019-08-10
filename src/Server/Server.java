@@ -20,6 +20,9 @@ public class Server  {
         try {
 
             AuthService.connect();  // подключаемся к базе данных
+           // AuthService.getAllHash();
+            //String test = AuthService.getNickByLoginAndPass("login1", "pass1");
+            //System.out.println(test);
             server = new ServerSocket(8189);
             System.out.println("Сервер запущен");
 
@@ -46,9 +49,13 @@ public class Server  {
     }
 
     //отправка сообщения всем участникам чата
-    public void broadcastMsg(String msg){
-        for (ClientHandler c: clients){
-            c.sendMsg(msg);
+    public void broadcastMsg(ClientHandler from, String msg) {
+        //перебираем клиентов (получателей!! сообщений)
+        // и если конкретный получатель не в чёрном списке отправителя, посылаем ему сообщение
+        for (ClientHandler o : clients) {
+            if (!o.checkBlackList(from.getNick())) {
+                o.sendMsg(msg);
+            }
         }
     }
 
@@ -58,16 +65,26 @@ public class Server  {
         //попробую оператор break с меткой
         personalIs:
         {
-            for (ClientHandler client : clients) {
-                if (client.getNick().equals(nickTo)) {
-                    client.sendMsg("Личка от " + clientHandler.getNick() + ": " + msg);
-                    clientHandler.sendMsg("В личку " + nickTo + " : " + msg);
-                    break personalIs;
+            //перебираем клиентов и если ник текущего клиента равен требуемому,
+            // а также если требуемый ник не входит в чёрный список ,
+            // посылаем ему сообщение (И ТОЛЬКО ЕМУ)
+            for (ClientHandler o : clients) {
+                if (o.getNick().equals(nickTo)) {
+                    if (!clientHandler.checkBlackList(nickTo)){
+                        o.sendMsg("Личка от " + clientHandler.getNick() + ": " + msg);
+                        clientHandler.sendMsg("В личку " + nickTo + " : " + msg);
+                        break personalIs;
+                    }else {
+                        clientHandler.sendMsg(" Не отправлено: "+ nickTo + " в чёрном списке" );
+                        break personalIs;
+                    }
                 }
             }
             clientHandler.sendMsg(" Нет участника с ником: " + nickTo);
         }
     }
+//clientHandler.sendMsg(" Не отправлено: "+ nickTo + " в чёрном списке" );
+
 
     // есть ли участник с ником nick в чате
     public boolean isTheSame(String nick){

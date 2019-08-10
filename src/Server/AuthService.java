@@ -1,6 +1,8 @@
 package Server;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AuthService {
 
@@ -17,8 +19,31 @@ public class AuthService {
         statement = connection.createStatement();
     }
 
-    public static String getNickByLoginAndPass(String login, String pass) throws SQLException {
-        String query = String.format("select nickname from main where login = '%s' and password = '%s'",login, pass);
+    //изменяем пароль для логина
+    public static int[] getAllHash() throws SQLException{
+                int[] hash = {"pass1".hashCode(),"pass2".hashCode(),
+                        "pass3".hashCode(),"pass4".hashCode(),"pass5".hashCode()};
+                for (int i = 0; i < hash.length; i++ ){
+                    System.out.println(hash[i]);
+//                    106438208
+//                    106438209
+//                    106438210
+//                    106438211
+//                    106438212
+                }
+               return  hash;
+    }
+
+    //изменяем пароль для логина
+    public static void insertTableWithHash(String pass, String login) throws SQLException {
+        String query = String.format("UPDATE  main set password = %s where login = '%s'",
+                pass, login);
+        statement.executeUpdate(query);
+    }
+
+    //получаем ник по логину и паролю
+    public static String getNickByLoginAndPass(String login, int hashPass) throws SQLException {
+        String query = String.format("select nickname from main where login = '%s' and password = '%d'",login, hashPass);
         ResultSet rs = statement.executeQuery(query);
 
         if (rs.next()){
@@ -27,25 +52,28 @@ public class AuthService {
         return null;
     }
 
-    public static String getSocketByNick(String nick) throws SQLException {
-        String query = String.format("select socket from main where nickname = '%s'" , nick);
-        ResultSet rs = statement.executeQuery(query);
+    //добавляем ник в чёрный список - у каждого пользователя свой чёрный список
+    public static void addNickToBlacklist(String user_nick, String user_block) throws SQLException {
+        String query = String.format("INSERT into blacklist(user_nick, user_block) VALUES ('%s', '%s')", user_nick, user_block);
+        statement.executeUpdate(query);
+    }
 
-        if (rs.next()){
-            return rs.getString(1);
+    //получаем чёрный список по нику пользователя
+    public static List<String> getNicksFromBlacklist(String user_nick) throws SQLException {
+        String query = String.format("SELECT distinct user_block from blacklist where user_nick = '%s';", user_nick);
+        try {
+            ResultSet rs = statement.executeQuery(query);
+            List<String> blacklist = new ArrayList<>();
+            while (rs.next()){
+                blacklist.add( rs.getString(1));
+            }
+            return blacklist;
+        }catch (NullPointerException e){
+            e.printStackTrace();
         }
         return null;
     }
 
-    public static void setSocketByNick( String socket, String nick) throws SQLException {
-        String query = String.format("update main set socket = '%s' where nickname = '%s' " ,socket, nick);
-        statement.executeQuery(query);
-    }
-
-    public static void setSocketNullByNick(String nick) throws SQLException {
-        String query = String.format("update main set socket = 'null' where nickname = '%s' " , nick);
-        statement.executeQuery(query);
-    }
 
     public static void disconnect(){
         try {

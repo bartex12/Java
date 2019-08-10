@@ -1,5 +1,8 @@
 package Client;
 
+import Server.AuthService;
+import Server.ClientHandler;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -102,22 +105,17 @@ public class MyWindow extends JFrame  {
                         ///блок обработки сообщений
                         while (true){
                             String str = in.readUTF();
+                            System.out.println("Получена строка: " + str);
+                            //если строка не начинается с /
                             if (!str.startsWith("/")){
                                 String[] message = str.split(" ", 3);
                                 if (message[0].equals(nick)){
-//                                    DefaultListCellRenderer renderer =  (DefaultListCellRenderer)list.getCellRenderer();
-//                                    renderer.setHorizontalAlignment(JLabel.RIGHT);
-                                    model.addElement("                                             " +  message[2]);
+                                    model.addElement("                                             " +  str);
                                 }else {
-                                   // model.addElement(str);
-                                    model.addElement("<html><font color = blue>"+str);
+                                    model.addElement("<html><font color = blue>" + str);
                                 }
-                            }
-                            //jta.append(str + "\n");
-                            if (str.equals("/server Cloused")){
+                            }else if (str.equals("/server Cloused")){
                                 setAuthorized(false);
-                                //tryToAuth();
-                                //System.exit(0);
                                 break;
                             }
                         }
@@ -285,6 +283,7 @@ public class MyWindow extends JFrame  {
         JMenu mEdit = new JMenu("Edit");
         JMenu mHelp = new JMenu("Help");
         JMenuItem mExit = new JMenuItem("Disconnect");
+        //JMenuItem mBlacklist = new JMenuItem("Blacklist");
         JMenuItem mClear = new JMenuItem("Clear");
         JMenuItem mFaq = new JMenuItem("FAQ");
         JMenuItem mAbout = new JMenuItem("About");
@@ -296,6 +295,7 @@ public class MyWindow extends JFrame  {
 
         mFile.add(mExit);
 
+        //mEdit.add(mBlacklist);
         mEdit.add(mClear);
 
         mHelp.add(mFaq);
@@ -418,6 +418,20 @@ public class MyWindow extends JFrame  {
             }
         });
 
+//        mBlacklist.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                try {
+//                    List<String> blacklist = new ArrayList<String>() { };
+//                  blacklist = AuthService.getNicksFromBlacklist(nick);
+//                    //String s = ClientHandler.getBlacklistString(blacklist);
+//                    System.out.println(blacklist.size());
+//                } catch (SQLException ex) {
+//                    ex.printStackTrace();
+//                }
+//            }
+//        });
+
         //Стираем записи чата при нажатии Меню-> Edit->Clear
         mClear.addActionListener(new ActionListener() {
             @Override
@@ -439,78 +453,3 @@ public class MyWindow extends JFrame  {
         public void setSelectionInterval(final int index0, final int index1) { }
     }
 }
-
-//                                    Box boxAnotherMsg = Box.createHorizontalBox();
-//                                    anotherLabel = new JLabel();
-//                                    anotherLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
-//                                    anotherLabel.setText(str);
-//
-//                                    boxAnotherMsg.add(anotherLabel);
-//                                    boxAnotherMsg.add(Box.createHorizontalGlue());
-//
-//                                    boxChatNew.add(boxAnotherMsg);
-
-
-//anotherLabel.setText(str);
-
-//                                    JLabel label = new JLabel();
-//                                    label.setText(str);
-//                                    list.add(label);
-
-
-
-    //Box boxMyMsg = Box.createHorizontalBox();
-//                                    myLabel = new JLabel();
-//                                    myLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
-//                                    myLabel.setText(message[1]);
-//
-//                                    boxMyMsg.add(Box.createHorizontalGlue());
-//                                    boxMyMsg.add(myLabel);
-//
-//                                    boxChatNew.add(boxMyMsg);
-
-//myLabel.setText(message[1]);
-//                                    JLabel label = new JLabel();
-//                                    label.setText(message[1]);
-//                                    list.add(label);
-
-
-//        list.setVisibleRowCount(10);
-//        getContentPane().setLayout(new FlowLayout());
-//        getContentPane().add(new JScrollPane(list));
-//        list.setPreferredSize(new Dimension(400, 250));
-//        list.setOpaque(true);
-//        list.setBackground(Color.WHITE);
-
-//        JLabel labelMy = new JLabel();
-//        labelMy.setText("aaaaaaaaaaaaaa ");
-//        list.add(labelMy);
-//
-//        JLabel label1Another = new JLabel();
-//        label1Another.setText(" ddddddddddddddddddddd");
-//        list.add(label1Another);
-
-//        boxChatNew = Box.createVerticalBox();
-//        boxChatNew.setPreferredSize(new Dimension(400, 275));
-//        boxChatNew.setOpaque(true);
-//        boxChatNew.setBackground(new Color(255,255,255));
-//
-//        Box boxMyMsg = Box.createHorizontalBox();
-//        myLabel = new JLabel();
-//        myLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
-//        myLabel.setText(" ");
-//
-//       boxMyMsg.add(Box.createHorizontalGlue());
-//       boxMyMsg.add(myLabel);
-//
-//        boxChatNew.add(boxMyMsg);
-//
-//        Box boxAnotherMsg = Box.createHorizontalBox();
-//        anotherLabel = new JLabel();
-//        anotherLabel.setText(" ");
-//        anotherLabel.setFont(new Font("Dialog", Font.PLAIN, 20));
-//
-//        boxAnotherMsg.add(anotherLabel);
-//        boxAnotherMsg.add(Box.createHorizontalGlue());
-//
-//        boxChatNew.add(boxAnotherMsg);
