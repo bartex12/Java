@@ -1,0 +1,12 @@
+.root{
+    -fx-font-size: 12pt;
+    -fx-font-family: "Courier New";
+    -fx-background: rgb(160, 240, 225);
+}
+
+
+#btn1 {
+    -fx-font: 16px "Serif";
+    -fx-padding: 2;
+    -fx-background-color: #CCFF99;
+}

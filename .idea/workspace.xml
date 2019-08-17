@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b96fad95-a39e-40bc-99a4-20c789ed4182" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/JavaFX/src/TreeSetString/TreeSetString_Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/src/TreeSetTest/TreeSet_Demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/src/TreeSetTest2/TestClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/src/cat_winner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/src/css/StyleRed.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/src/kollaider100x67_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/src/letters16x10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/src/panda100x67.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/src/rekTel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/src/smile.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFX/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/src/css/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFX/src/css/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFX/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFX/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFX/src/sample/sample.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,20 +40,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
-              <caret line="74" column="81" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="81" />
+            <state relative-caret-position="714">
+              <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Server/Server_Demo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -46,40 +52,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client/MyWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
+            <state relative-caret-position="187">
+              <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#14465#14466#0" expanded="true" />
                 <element signature="e#14509#14510#0" expanded="true" />
                 <element signature="e#14718#14719#0" expanded="true" />
                 <element signature="e#14763#14764#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Server/ClientHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2091">
-              <caret line="133" column="23" selection-start-line="133" selection-start-column="23" selection-end-line="133" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#525#526#0" expanded="true" />
-                <element signature="e#572#573#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Server/AuthService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="45" column="101" selection-start-line="45" selection-start-column="101" selection-end-line="45" selection-end-column="101" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -148,10 +128,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1613" />
+    <option name="width" value="1614" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectView">
@@ -197,8 +177,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -276,8 +256,8 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49814814" visible="true" weight="0.22591093" />
-      <window_info id="Structure" order="1" sideWeight="0.50185186" side_tool="true" weight="0.22186235" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4962963" visible="true" weight="0.20242915" />
+      <window_info id="Structure" order="1" sideWeight="0.5037037" side_tool="true" weight="0.20242915" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -430,8 +410,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="74" column="81" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="81" />
+        <state relative-caret-position="714">
+          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -459,18 +439,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/AuthService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="45" column="101" selection-start-line="45" selection-start-column="101" selection-end-line="45" selection-end-column="101" />
+        <state relative-caret-position="1275">
+          <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/javax/swing/JFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="122" column="13" selection-start-line="122" selection-start-column="13" selection-end-line="122" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/MyWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="54" column="43" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="43" />
+        <state relative-caret-position="187">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#14465#14466#0" expanded="true" />
@@ -536,7 +523,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
