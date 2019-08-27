@@ -1,25 +1,100 @@
-name2 : Добро пожаловать в чат!
-name2 : 2
-name1 : 1
-name2 : 22
-name1 : 11
-name3 подключился к чату
-name3 : 3
-name3 вышел из чата
-name1 вышел из чата
-name2 : Добро пожаловать в чат!
-name2 : 2
-name1 : 1
-name2 : 22
-name1 : 11
-name3 подключился к чату
-name3 : 3
-name3 вышел из чата
-name1 вышел из чата
-name2 : Добро пожаловать в чат!
-name1 подключился к чату
-name1 : 111
-name3 : 3
-name2 : 222
-name3 вышел из чата
+name2 : d
+name2 : dd
+name2 : d
+name2 : dd
+name2 : d
+name2 : ddd
+name2 : ddd
+name2 : dddd
+name2 : ddd
+name2 : dd
+name2 : d
+name2 : ddddd
+name2 : dddd
+name2 : ddddd
+name2 : dddd
+name2 : dddd
+name1 : s
+name1 : sss
+name1 : ыыыыыыыыы
+name1 : ыыы
+name1 : ыыы
+name1 : ы
+name1 : ыыыыыыыы
+name1 : ы
+name1 : ы
+name1 : ыы
+name1 : ыыыыы
+name1 : ыыыыыыыыыыы
+name1 : ыы
+name1 : ыыыыыыы
+name1 : ыыыыыыыыыы
+name1 : ыыыыыы
+name1 : ыы
+name1 : ыыыыыыыыы
+name1 : ыыыы
+name1 : ы
+name1 : ыыы
+name1 : ыыыы
+name1 : ыыыы
+name1 : ы
+name1 : ыыы
+name1 : ыыы
+name1 : ы
+name2 : ddddddda
+name2 : aaaa
+name2 : aaa
+name2 : aaaaaaa
+name2 : aaaaa
+name2 : aaaa
+name2 : aaaa
+name2 : a
+name2 : v
+name2 : vvv
+name2 : vvvv
+name2 : vvv
+name2 : vvvv
+name2 : vvvv
+name2 : vvv
+name2 : vvvvvvvv
+name2 : vvvvvvv
+name2 : vvvvv
+name2 : vvvv
+name2 : vvv
+name2 : vvv
+name2 : vvv
+name2 : vvv
+name2 : vvv
+name2 : vvv
+name2 : vvvv
+name2 : vvvv
+name2 : vvvv
+name2 : vvvvv
+name2 : vvv
+name2 : vvvvvvvvv
+name2 : vvv
+name2 : vvvvt
+name2 : tt
+name2 : ttt
+name2 : tttt
+name2 : ttt
+name1 : ыыыыыыыыыс
+name1 : к
+name1 : к5
+name1 : кк
+name1 : ккккк
+name1 : кккк
+name1 : кккк
+name1 : к
+name1 : к
+name1 : кк
+name1 : ккк
+name1 : кккк
+name1 : ккк
+name1 : кккк
+name1 : ккк
+name1 : кккк
+name1 : кккк
+name1 : ккк
+name1 : ккк
 name1 вышел из чата

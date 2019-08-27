@@ -105,29 +105,9 @@ public class MyWindow extends JFrame  {
                                 jta.append(str + "\n");
                             }
                         }
-
-                        //************* читаем из файла историю на maxMsg=100 сообщений *************
-                        fileLogs = new File(nick+ FILENAME);
-                        if (fileLogs.exists()){
-                            try( BufferedReader br = new BufferedReader(new FileReader(fileLogs))) {
-                                String ss;
-                                //пока не закончится файл добавляем строки на экран
-                                while ((ss = br.readLine())!=null){
-                                    msgInLog.add(ss); //пишем поступившую строку в ArrayList
-                                    String[] message = ss.split(" ", 3);
-                                    if (message[0].equals(nick)){
-                                        model.addElement("                                             " +  ss);
-                                    }else {
-                                        model.addElement("<html><font color = blue>" + ss);
-                                    }
-                                }
-                            } catch (FileNotFoundException e) {
-                                e.printStackTrace();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        //******************************************************
+                        //************* читаем из файла историю на maxMsg=100 сообщений
+                        getHistory();
+                        //*************************************************************
 
                         ///блок обработки сообщений
                         while (true){
@@ -143,22 +123,9 @@ public class MyWindow extends JFrame  {
                                     model.addElement("<html><font color = blue>" + str);
                                 }
                             }else if (str.equals("/server Cloused")){
-
-                                //************* записываем  в файл последние maxMsg =100 сообщений чата ***********
-                                try ( BufferedWriter bw = new BufferedWriter(new FileWriter(fileLogs))){
-                                    //берём самые свежие сообщения в количестве не более заданного maxMsg
-                                    int count = msgInLog.size()>maxMsg ? msgInLog.size()-maxMsg :0;
-                                    for (int i = count; i<msgInLog.size(); i++){
-                                            bw.write(msgInLog.get(i));
-                                            bw.write(System.getProperty("line.separator"));
-                                            System.out.println("В файл записана строка: " + (msgInLog.get(i)));
-                                    }
-                                    bw.flush();
-                                    msgInLog=null;
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                                //**************************************************************
+                                //************* записываем  в файл последние maxMsg =100 сообщений чата
+                                setHistory();
+                                //*********************************************************************
                                 setAuthorized(false);
                                 break;
                             }
@@ -181,7 +148,48 @@ public class MyWindow extends JFrame  {
         }
     }
 
-    //****************  конструктор - готови и выводим окно чата, взаимодействуем с сервером *************
+    //************* читаем из файла историю на maxMsg=100 сообщений *************
+    private void getHistory(){
+        fileLogs = new File(nick+ FILENAME);
+        if (fileLogs.exists()){
+            try( BufferedReader br = new BufferedReader(new FileReader(fileLogs))) {
+                String ss;
+                //пока не закончится файл добавляем строки на экран
+                while ((ss = br.readLine())!=null){
+                    msgInLog.add(ss); //пишем поступившую строку в ArrayList
+                    String[] message = ss.split(" ", 3);
+                    if (message[0].equals(nick)){
+                        model.addElement("                                             " +  ss);
+                    }else {
+                        model.addElement("<html><font color = blue>" + ss);
+                    }
+                }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    //************* записываем  в файл последние maxMsg =100 сообщений чата ***********
+    private void setHistory(){
+        try ( BufferedWriter bw = new BufferedWriter(new FileWriter(fileLogs))){
+            //берём самые свежие сообщения в количестве не более заданного maxMsg
+            int count = msgInLog.size()>maxMsg ? msgInLog.size()-maxMsg :0;
+            for (int i = count; i<msgInLog.size(); i++){
+                bw.write(msgInLog.get(i));
+                bw.write(System.getProperty("line.separator"));
+                System.out.println("В файл записана строка: " + (msgInLog.get(i)));
+            }
+            bw.flush();
+            msgInLog=null;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //****************  конструктор - готовим и выводим окно чата, взаимодействуем с сервером 
     public MyWindow() {
         //**************задаём общие настройки**************
         super("Hello");

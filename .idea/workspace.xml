@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b96fad95-a39e-40bc-99a4-20c789ed4182" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/name1_chatHelloLogs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/name1_chatHelloLogs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/name2_chatHelloLogs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/name2_chatHelloLogs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/name3_chatHelloLogs.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client/MyWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/MyWindow.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,14 +23,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client/MyWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="103" column="58" selection-start-line="103" selection-start-column="58" selection-end-line="103" selection-end-column="58" />
+            <state relative-caret-position="153">
+              <caret line="191" column="94" selection-start-line="191" selection-start-column="94" selection-end-line="191" selection-end-column="94" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#17580#17581#0" expanded="true" />
-                <element signature="e#17624#17625#0" expanded="true" />
-                <element signature="e#17833#17834#0" expanded="true" />
-                <element signature="e#17878#17879#0" expanded="true" />
+                <element signature="e#16848#16849#0" expanded="true" />
+                <element signature="e#16892#16893#0" expanded="true" />
+                <element signature="e#17101#17102#0" expanded="true" />
+                <element signature="e#17146#17147#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,18 +148,6 @@
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Lesson1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lesson1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -240,7 +230,7 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2534413" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15870446" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -256,7 +246,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32962963" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32962963" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.24259259" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.07962963" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32962963" />
       <window_info anchor="bottom" id="SVN Repositories" order="11" visible="true" weight="0.32962963" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -290,7 +280,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Animal.java" />
     <entry file="file://$PROJECT_DIR$/Competitor.java" />
     <entry file="file://$PROJECT_DIR$/Cat.java" />
     <entry file="file://$PROJECT_DIR$/Dog.java" />
@@ -395,13 +384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -438,22 +420,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/name2_chatHelloLogs.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/name1_chatHelloLogs.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/name2_chatHelloLogs.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client/MyWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="103" column="58" selection-start-line="103" selection-start-column="58" selection-end-line="103" selection-end-column="58" />
+        <state relative-caret-position="153">
+          <caret line="191" column="94" selection-start-line="191" selection-start-column="94" selection-end-line="191" selection-end-column="94" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#17580#17581#0" expanded="true" />
-            <element signature="e#17624#17625#0" expanded="true" />
-            <element signature="e#17833#17834#0" expanded="true" />
-            <element signature="e#17878#17879#0" expanded="true" />
+            <element signature="e#16848#16849#0" expanded="true" />
+            <element signature="e#16892#16893#0" expanded="true" />
+            <element signature="e#17101#17102#0" expanded="true" />
+            <element signature="e#17146#17147#0" expanded="true" />
           </folding>
         </state>
       </provider>
