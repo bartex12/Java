@@ -1,1 +1,4 @@
-*.xml
+# IntellijIdea files
+*.iml
+.idea
+out

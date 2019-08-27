@@ -10,10 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class MyWindow extends JFrame  {
 
@@ -36,6 +35,10 @@ public class MyWindow extends JFrame  {
     DefaultListModel model;
 
     String nick = "";
+
+    ArrayList<String> msgInLog = new ArrayList<>();
+    public final String FILENAME = "_chatHelloLogs.txt";
+    File fileLogs;
 
     Box boxReclam;
     Box  boxAuth;
@@ -96,6 +99,33 @@ public class MyWindow extends JFrame  {
                                 nick = newNick[1];
                                 System.out.println("MyWindow connect() authok" + " nick = " + nick);
                                 setAuthorized(true);
+
+                                //************* читаем из файла первые 100 сообщений *************
+                                fileLogs = new File(nick+ FILENAME);
+                                if (fileLogs.exists()){
+                                    try( BufferedReader br = new BufferedReader(new FileReader(fileLogs))) {
+                                        msgInLog = new ArrayList<>();
+                                        String ss;
+                                        while ((ss = br.readLine())!=null){
+                                            msgInLog.add(ss);
+                                        }
+                                        for (String s: msgInLog){
+
+                                            String[] message = s.split(" ", 3);
+                                            if (message[0].equals(nick)){
+                                                model.addElement("                                             " +  s);
+                                            }else {
+                                                model.addElement("<html><font color = blue>" + s);
+                                            }
+                                        }
+                                    } catch (FileNotFoundException e) {
+                                        e.printStackTrace();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                                //******************************************************
+
                                 break;
                             }else {
                                 jta.append(str + "\n");
@@ -108,6 +138,7 @@ public class MyWindow extends JFrame  {
                             System.out.println("Получена строка: " + str);
                             //если строка не начинается с /
                             if (!str.startsWith("/")){
+                                msgInLog.add(str); //пишем поступившую строку пока в ArrayList
                                 String[] message = str.split(" ", 3);
                                 if (message[0].equals(nick)){
                                     model.addElement("                                             " +  str);
@@ -115,6 +146,26 @@ public class MyWindow extends JFrame  {
                                     model.addElement("<html><font color = blue>" + str);
                                 }
                             }else if (str.equals("/server Cloused")){
+
+                                //************* записываем  в файл первые 100 сообщений чата ***********
+                                long sizeOfFile = fileLogs.length();
+                                System.out.println("sizeOfFile " + sizeOfFile);
+                                try ( BufferedWriter bw = new BufferedWriter(new FileWriter(fileLogs, true))){
+                                    for (int i = 0; i<msgInLog.size(); i++){
+                                        if (i>99){
+                                            break;
+                                        }else {
+                                            bw.write(msgInLog.get(i));
+                                            bw.write(System.getProperty("line.separator"));
+                                            System.out.println("В файл записана строка: " + (msgInLog.get(i)));
+                                        }
+                                    }
+                                    bw.flush();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                //**************************************************************
+
                                 setAuthorized(false);
                                 break;
                             }
