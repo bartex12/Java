@@ -6,10 +6,7 @@ import Server.ClientHandler;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -189,7 +186,7 @@ public class MyWindow extends JFrame  {
         }
     }
 
-    //****************  конструктор - готовим и выводим окно чата, взаимодействуем с сервером 
+    //****************  конструктор - готовим и выводим окно чата, взаимодействуем с сервером
     public MyWindow() {
         //**************задаём общие настройки**************
         super("Hello");
@@ -301,6 +298,7 @@ public class MyWindow extends JFrame  {
         list.setSelectionModel(new NoSelectionModel());
        myScroll = new JScrollPane(list);
        myScroll.setPreferredSize(new Dimension(400,250));
+
 
         //******************настройка строки и кнопки ввода****************
         boxInput = Box.createHorizontalBox();
@@ -442,7 +440,15 @@ public class MyWindow extends JFrame  {
             }
         });
 
-        //закрываем программу при нажатии Меню-> File->Exit
+//        //Автопрокрутка вниз
+//        myScroll.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener() {
+//            public void adjustmentValueChanged(AdjustmentEvent e) {
+//                e.getAdjustable().setValue(e.getAdjustable().getMaximum());
+//                //myScroll.setViewportView(list);
+//            }
+//        });
+
+
         mExit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
