@@ -38,6 +38,7 @@ public class MyWindow extends JFrame  {
 
     ArrayList<String> msgInLog = new ArrayList<>();
     public final String FILENAME = "_chatHelloLogs.txt";
+    public final int maxMsg = 100;
     File fileLogs;
 
     Box boxReclam;
@@ -99,38 +100,34 @@ public class MyWindow extends JFrame  {
                                 nick = newNick[1];
                                 System.out.println("MyWindow connect() authok" + " nick = " + nick);
                                 setAuthorized(true);
-
-                                //************* читаем из файла первые 100 сообщений *************
-                                fileLogs = new File(nick+ FILENAME);
-                                if (fileLogs.exists()){
-                                    try( BufferedReader br = new BufferedReader(new FileReader(fileLogs))) {
-                                        msgInLog = new ArrayList<>();
-                                        String ss;
-                                        while ((ss = br.readLine())!=null){
-                                            msgInLog.add(ss);
-                                        }
-                                        for (String s: msgInLog){
-
-                                            String[] message = s.split(" ", 3);
-                                            if (message[0].equals(nick)){
-                                                model.addElement("                                             " +  s);
-                                            }else {
-                                                model.addElement("<html><font color = blue>" + s);
-                                            }
-                                        }
-                                    } catch (FileNotFoundException e) {
-                                        e.printStackTrace();
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
-                                    }
-                                }
-                                //******************************************************
-
                                 break;
                             }else {
                                 jta.append(str + "\n");
                             }
                         }
+
+                        //************* читаем из файла историю на maxMsg=100 сообщений *************
+                        fileLogs = new File(nick+ FILENAME);
+                        if (fileLogs.exists()){
+                            try( BufferedReader br = new BufferedReader(new FileReader(fileLogs))) {
+                                String ss;
+                                //пока не закончится файл добавляем строки на экран
+                                while ((ss = br.readLine())!=null){
+                                    msgInLog.add(ss); //пишем поступившую строку в ArrayList
+                                    String[] message = ss.split(" ", 3);
+                                    if (message[0].equals(nick)){
+                                        model.addElement("                                             " +  ss);
+                                    }else {
+                                        model.addElement("<html><font color = blue>" + ss);
+                                    }
+                                }
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        //******************************************************
 
                         ///блок обработки сообщений
                         while (true){
@@ -147,29 +144,26 @@ public class MyWindow extends JFrame  {
                                 }
                             }else if (str.equals("/server Cloused")){
 
-                                //************* записываем  в файл первые 100 сообщений чата ***********
-                                long sizeOfFile = fileLogs.length();
-                                System.out.println("sizeOfFile " + sizeOfFile);
-                                try ( BufferedWriter bw = new BufferedWriter(new FileWriter(fileLogs, true))){
-                                    for (int i = 0; i<msgInLog.size(); i++){
-                                        if (i>99){
-                                            break;
-                                        }else {
+                                //************* записываем  в файл последние maxMsg =100 сообщений чата ***********
+                                try ( BufferedWriter bw = new BufferedWriter(new FileWriter(fileLogs))){
+                                    //берём самые свежие сообщения в количестве не более заданного maxMsg
+                                    int count = msgInLog.size()>maxMsg ? msgInLog.size()-maxMsg :0;
+                                    for (int i = count; i<msgInLog.size(); i++){
                                             bw.write(msgInLog.get(i));
                                             bw.write(System.getProperty("line.separator"));
                                             System.out.println("В файл записана строка: " + (msgInLog.get(i)));
-                                        }
                                     }
                                     bw.flush();
+                                    msgInLog=null;
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
                                 //**************************************************************
-
                                 setAuthorized(false);
                                 break;
                             }
                         }
+
                     } catch (IOException e) {
                         e.printStackTrace();
                     }finally {
