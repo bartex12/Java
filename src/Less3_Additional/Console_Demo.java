@@ -1,6 +1,8 @@
 package Less3_Additional;
 
 import java.io.*;
+import java.text.NumberFormat;
+import java.text.ParsePosition;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -12,6 +14,14 @@ public class Console_Demo {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static boolean isNumeric(String str)
+    {
+        NumberFormat formatter = NumberFormat.getInstance();
+        ParsePosition pos = new ParsePosition(0);
+        formatter.parse(str, pos);
+        return str.length() == pos.getIndex();
     }
 
     //консольное приложение Книга
@@ -65,17 +75,16 @@ public class Console_Demo {
         //читаем файл постранично
         RandomAccessFile raf= new RandomAccessFile(file,"r");
         System.out.println("*** Для выхода введите //\n");
-        System.out.println("Введите номер страницы число от 1 до " + pageCountMax);
+        System.out.println("Введите номер страницы: число от 1 до " + pageCountMax);
         Scanner in = new Scanner(System.in);
 
+        //в бесконечном цикле ждём ввод числа в заданном диапазоне
         while (true){
             String s = in.nextLine();
             if (s.trim().startsWith("//")){
                 raf.close();
                 System.exit(0);
-            }else if (s.trim().equals("")) {
-                System.out.println("Введите число");
-            }else {
+            }else if ( isNumeric(s)) {
                 long pageNumber = Long.parseLong(s);
                 if (pageNumber<1)pageNumber = 1;
                 if (pageNumber > pageCountMax) pageNumber = pageCountMax;
@@ -87,6 +96,8 @@ public class Console_Demo {
                 x = raf.read(bt,0,PAGE_SIZE);
                 System.out.println(new String(bt, 0,x));
 
+            }else{
+                System.out.println("Введите номер страницы: число от 1 до " + pageCountMax);
             }
         }
 
