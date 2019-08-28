@@ -22,8 +22,9 @@ public class Console_Demo {
         final int LINES = 100000; //количество строк по 100 случайных символов
         byte[] bt = new byte[PAGE_SIZE]; //размер буфера = размеру страницы
 
+        File file_ = new File("123");
+        file_.mkdir(); //создаём папку 123
         File file = new File("123/book.txt");
-        //file.mkdirs(); //создаём папку 123
         file.createNewFile(); //создаем текстовый файл
 
         ArrayList<String> arr = new ArrayList<>(LINES); //ArrayList подходящего размера

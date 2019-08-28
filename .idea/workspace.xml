@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b96fad95-a39e-40bc-99a4-20c789ed4182" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Less3_Additional/Console_Demo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/123/1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/123/2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/123/3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/123/4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/123/5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/123/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/123/book.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Less3_Additional/Console_Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Less3_Additional/Console_Demo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Less3_Additional/Console_Demo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+            <state relative-caret-position="136">
+              <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -194,13 +189,13 @@
               <item name="Lesson1" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="Less3_Additional" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Lesson1" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Less3_Additional" type="462c0819:PsiDirectoryNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -576,8 +571,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Less3_Additional/Console_Demo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+        <state relative-caret-position="136">
+          <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
