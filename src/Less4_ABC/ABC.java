@@ -1,4 +1,4 @@
-package Lesson4;
+package Less4_ABC;
 
 //    Создать три потока, каждый из которых выводит определенную букву (A, B и C) 5 раз (порядок
 //– ABСABСABС). Используйте wait/notify/notifyAll.

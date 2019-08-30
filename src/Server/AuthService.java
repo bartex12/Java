@@ -19,7 +19,7 @@ public class AuthService {
         statement = connection.createStatement();
     }
 
-    //изменяем пароль для логина
+    //получаем hash code для 5 паролей в базе данных
     public static int[] getAllHash() throws SQLException{
                 int[] hash = {"pass1".hashCode(),"pass2".hashCode(),
                         "pass3".hashCode(),"pass4".hashCode(),"pass5".hashCode()};
