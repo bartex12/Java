@@ -5,12 +5,18 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.SQLException;
 import java.util.Vector;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Server  {
 
     private Vector<ClientHandler> clients; //синхро список клиентов
 
     public Server() throws SQLException {
+        // готовим пул на 10 потоков
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        // сразу запускаем поток для работы с базой данных, чтобы провести авторизацию
+        executorService.execute(new DB_Runnable());
 
         clients =  new Vector<>();
 
@@ -18,18 +24,15 @@ public class Server  {
         ServerSocket server = null;
 
         try {
-
-            Auth_DB_Service.connect();  // подключаемся к базе данных
-           // Auth_DB_Service.getAllHash();
-            //String test = Auth_DB_Service.getNickByLoginAndPass("login1", "pass1");
-            //System.out.println(test);
             server = new ServerSocket(8189);
             System.out.println("Сервер запущен");
 
             while (true){
                 socket = server.accept();
                 System.out.println("Подключение");
-                new ClientHandler(this, socket);
+                executorService.execute( new ClientHandler(this, socket));
+                Thread.currentThread().setName("ClientHandler");
+
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,6 +48,7 @@ public class Server  {
                 e.printStackTrace();
             }
             Auth_DB_Service.disconnect();  //отключаемся от базы данных
+            executorService.shutdown();
         }
     }
 
