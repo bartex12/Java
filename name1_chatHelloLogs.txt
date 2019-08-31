@@ -1,13 +1,3 @@
-name2 : d
-name1 : e
-name1 : e
-name1 : e
-name1 : e
-name1 : e
-name1 : e
-name1 : e
-name1 : e
-name1 : e
 name1 : e
 name1 : e
 name1 : e
@@ -98,3 +88,13 @@ name1 : dasfdfsf
 name1 : adfaf
 name3 : sdfdfdf
 name2 : asdfadsf
+name1 : Добро пожаловать в чат!
+name2 подключился к чату
+name1 : aaa
+name2 : dddddddddddddddd
+name1 : xxxxxx
+name1 : ccvzvzvv
+name2 : xcvzvzvzv
+name2 : zxcvzzxcvcv
+name1 : xzcvvxcv
+name2 вышел из чата
