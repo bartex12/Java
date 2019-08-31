@@ -8,7 +8,7 @@ import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
 
-public class MyWindow extends JFrame  {
+public class MyWindow extends JFrame implements AdjustmentListener {
 
     private JTextArea jta;
 
@@ -163,6 +163,7 @@ public class MyWindow extends JFrame  {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            lineInMax(); // подключаем слушатель, устанавливаем скролл на последнюю строку, отключаем слушатель
         }
     }
 
@@ -408,6 +409,9 @@ public class MyWindow extends JFrame  {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
+                    //для того, чтобы последняя введённая строка отображалась и при этом можно было прокручивать список
+                    // подключаем слушатель, устанавливаем скролл на последнюю строку, отключаем слушатель
+                    lineInMax();
                     //по кнопке отправляем текст, если это не пустая строка, на сервер,
                     // стираем строку и устанавливаем на неё фокус
                     if ((jtf.getText()).trim().length()>0){
@@ -437,7 +441,9 @@ public class MyWindow extends JFrame  {
             }
         });
 
-//        //Автопрокрутка вниз
+
+
+
 //        myScroll.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener() {
 //            public void adjustmentValueChanged(AdjustmentEvent e) {
 //                e.getAdjustable().setValue(e.getAdjustable().getMaximum());
@@ -496,6 +502,18 @@ public class MyWindow extends JFrame  {
                 model.removeAllElements();
             }
         });
+    }
+
+    ////Автопрокрутка вниз с последующим отключением слушателя - см ниже метод adjustmentValueChanged(AdjustmentEvent e)
+    private void lineInMax(){
+        myScroll.getVerticalScrollBar().addAdjustmentListener(this);
+    }
+
+    //имплементация слушателя прокрутки для this -(class MyWindow extends JFrame implements AdjustmentListener )
+    @Override
+    public void adjustmentValueChanged(AdjustmentEvent e) {
+        e.getAdjustable().setValue(e.getAdjustable().getMaximum());
+        myScroll.getVerticalScrollBar().removeAdjustmentListener(this);
     }
 
     private static class NoSelectionModel extends DefaultListSelectionModel {
