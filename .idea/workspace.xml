@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b96fad95-a39e-40bc-99a4-20c789ed4182" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Server/DB_Runnable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/name2_chatHelloLogs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/name2_chatHelloLogs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/MyWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client/MyWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/name1_chatHelloLogs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/name1_chatHelloLogs.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -300,7 +295,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17894737" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -311,7 +305,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.41666666" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31666666" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31666666" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

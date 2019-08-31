@@ -1,42 +1,4 @@
 name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : ddddd
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
-name2 : d
 name1 : e
 name1 : e
 name1 : e
@@ -98,3 +60,41 @@ name2 : 55
 name1 : Добро пожаловать в чат!
 name1 : ffdf
 name1 : fdfd
+name1 : Добро пожаловать в чат!
+name1 : adfadfd
+name1 : asdfadf
+name1 : asdfadsf
+name1 : vscsa
+name2 подключился к чату
+name1 : sfgsfgfg
+name2 : sdfgsfgfgf
+name1 : вапфвпвафва
+name2 : sdafadsfdafdfd
+name1 : sadfdasfasdf
+name2 : adfdfadggf
+name1 : asdfdfdf
+name1 : dafadfadsf
+name1 : вафавфа
+name2 : asdfdfdf
+name2 : sdfsdfd
+name3 подключился к чату
+name3 : вафвава
+name1 : фывафвыа
+name2 : sadfadfdfa
+name1 : фывафвыаы
+name3 : sadfsdff
+name2 : asdfasdfd
+name1 : sdafasdf
+name3 : dsfasdf
+name2 : dsafasdf
+name3 вышел из чата
+name3 подключился к чату
+name3 : фывафыва
+name3 : фывафывавф
+name3 : sadfasdf
+name3 : asdfdasf
+name3 : dfsafdsf
+name1 : dasfdfsf
+name1 : adfaf
+name3 : sdfdfdf
+name2 : asdfadsf
