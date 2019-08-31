@@ -47,7 +47,7 @@ public class ClientHandler {
                                     System.out.println("ClientHandler цикл авторизации str = " + str);
                                     String[] tokens = str.split(" ");
                                     int hash = tokens[2].hashCode();
-                                    String newNick = AuthService.getNickByLoginAndPass(tokens[1],hash);
+                                    String newNick = Auth_DB_Service.getNickByLoginAndPass(tokens[1],hash);
                                     if (newNick!=null){
                                         if (!server.isTheSame(newNick)){
                                             sendMsg("/authok " + newNick);
@@ -87,15 +87,15 @@ public class ClientHandler {
                                 }else if (str.startsWith("/blacklist")) {
                                     String[] tokens = str.split(" ");
                                     //blackList.add(tokens[1]);
-                                    AuthService.addNickToBlacklist(nick,tokens[1]);
+                                    Auth_DB_Service.addNickToBlacklist(nick,tokens[1]);
                                     sendMsg("Вы добавили пользователя " + tokens[1] + " в черный список");
-                                    blackList =  AuthService.getNicksFromBlacklist(nick);
+                                    blackList =  Auth_DB_Service.getNicksFromBlacklist(nick);
                                     String s = getBlacklistString(blackList);
                                     //sendMsg("В чёрном списке: " + s);
                                     System.out.println(nick + " имеет в  чёрном списке: " + s);
                                 }else {
                                     // чтобы легче ориентироваться в чёрных списках
-                                    blackList =  AuthService.getNicksFromBlacklist(nick);
+                                    blackList =  Auth_DB_Service.getNicksFromBlacklist(nick);
                                     String s = getBlacklistString(blackList);
                                     System.out.println(nick + " имеет в  чёрном списке: " + s);
                                     //отправляем сообщение всем, кто в списке Vector<ClientHandler> clients

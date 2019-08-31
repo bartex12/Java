@@ -1,8 +1,5 @@
 package Client;
 
-import Server.AuthService;
-import Server.ClientHandler;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -482,7 +479,7 @@ public class MyWindow extends JFrame  {
 //            public void actionPerformed(ActionEvent e) {
 //                try {
 //                    List<String> blacklist = new ArrayList<String>() { };
-//                  blacklist = AuthService.getNicksFromBlacklist(nick);
+//                  blacklist = Auth_DB_Service.getNicksFromBlacklist(nick);
 //                    //String s = ClientHandler.getBlacklistString(blacklist);
 //                    System.out.println(blacklist.size());
 //                } catch (SQLException ex) {

@@ -19,9 +19,9 @@ public class Server  {
 
         try {
 
-            AuthService.connect();  // подключаемся к базе данных
-           // AuthService.getAllHash();
-            //String test = AuthService.getNickByLoginAndPass("login1", "pass1");
+            Auth_DB_Service.connect();  // подключаемся к базе данных
+           // Auth_DB_Service.getAllHash();
+            //String test = Auth_DB_Service.getNickByLoginAndPass("login1", "pass1");
             //System.out.println(test);
             server = new ServerSocket(8189);
             System.out.println("Сервер запущен");
@@ -44,7 +44,7 @@ public class Server  {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            AuthService.disconnect();  //отключаемся от базы данных
+            Auth_DB_Service.disconnect();  //отключаемся от базы данных
         }
     }
 

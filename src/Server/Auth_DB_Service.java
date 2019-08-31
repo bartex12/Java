@@ -4,7 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AuthService {
+public class Auth_DB_Service {
 
     public static Connection connection;
     public static Statement statement;
