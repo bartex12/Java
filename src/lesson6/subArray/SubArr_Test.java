@@ -46,7 +46,7 @@ public class SubArr_Test {
     }
 
     @Test
-    public void test_HoleArray(){
+    public void test_EmptyArray(){
         Assert.assertArrayEquals(null, sa.getSubArray(arr33));
     }
 
