@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b96fad95-a39e-40bc-99a4-20c789ed4182" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Less4_ABC/ABC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson6/array1And4/Array1And4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson6/array1And4/Array1And4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson6/array1And4/Array1And4_Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson6/array1And4/Array1And4_Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson6/array1And4/Array1And4_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson6/array1And4/Array1And4_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson6/subArray/SubArr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson6/subArray/SubArr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson6/subArray/SubArr_Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson6/subArray/SubArr_Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson6/subArray/SubArr_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson6/subArray/SubArr_Test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -156,7 +150,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="width" value="642" />
     <option name="height" value="342" />
   </component>
@@ -219,15 +213,17 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Java_Programs\GeekBrains\Java\123" />
-      <recent name="D:\Java_Programs\GeekBrains\Java\src" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java_Programs\GeekBrains\Java\src\lesson6\subArray" />
+      <recent name="D:\Java_Programs\GeekBrains\Java\src\lesson6\array1And4" />
+      <recent name="D:\Java_Programs\GeekBrains\Java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Less4_ABC" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Java_Programs\GeekBrains\Java" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java_Programs\GeekBrains\Java\123" />
+      <recent name="D:\Java_Programs\GeekBrains\Java\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -293,7 +289,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1951417" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
