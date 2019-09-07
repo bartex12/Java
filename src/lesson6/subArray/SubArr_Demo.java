@@ -1,4 +1,4 @@
-package com.batiaev.java3.lesson6.dz_less6.subArray;
+package lesson6.subArray;
 
 public class SubArr_Demo {
 

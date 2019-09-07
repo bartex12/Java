@@ -1,11 +1,6 @@
-package com.batiaev.java3.lesson6.dz_less6.array1And4;
+package lesson6.array1And4;
 
 import org.junit.*;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-
-import java.util.Arrays;
-import java.util.Collection;
 
 
 public class Array1And4_Test {
