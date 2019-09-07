@@ -3,8 +3,12 @@ package Server;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Auth_DB_Service {
+
+    private static Logger log = Logger.getLogger(Auth_DB_Service.class.getName());
 
     public static Connection connection;
     public static Statement statement;
@@ -14,6 +18,7 @@ public class Auth_DB_Service {
             Class.forName("org.sqlite.JDBC");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+            log.log(Level.SEVERE, "ClassNotFoundException: ", e);
         }
         connection = DriverManager.getConnection("jdbc:sqlite:mainBaseSQLite.db");
         statement = connection.createStatement();
@@ -70,6 +75,7 @@ public class Auth_DB_Service {
             return blacklist;
         }catch (NullPointerException e){
             e.printStackTrace();
+            log.log(Level.SEVERE, "NullPointerException: ", e);
         }
         return null;
     }
@@ -80,6 +86,7 @@ public class Auth_DB_Service {
             connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
+            log.log(Level.SEVERE, "SQLException: ", e);
         }
     }
 

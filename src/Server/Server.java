@@ -7,9 +7,12 @@ import java.sql.SQLException;
 import java.util.Vector;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Server  {
 
+    private static Logger log = Logger.getLogger(Server.class.getName());
     private Vector<ClientHandler> clients; //синхро список клиентов
 
     public Server() throws SQLException {
@@ -26,26 +29,31 @@ public class Server  {
         try {
             server = new ServerSocket(8189);
             System.out.println("Сервер запущен");
+            log.info("Server is running");
 
             while (true){
                 socket = server.accept();
                 System.out.println("Подключение");
+                log.info("Connection");
                 executorService.execute( new ClientHandler(this, socket));
                 Thread.currentThread().setName("ClientHandler");
 
             }
         } catch (IOException e) {
             e.printStackTrace();
+            log.log(Level.SEVERE, "IOException: ", e);
         }finally {
             try {
                 socket.close();
             } catch (IOException e) {
                 e.printStackTrace();
+                log.log(Level.SEVERE, "IOException: ", e);
             }
             try {
                 server.close();
             } catch (IOException e) {
                 e.printStackTrace();
+                log.log(Level.SEVERE, "IOException: ", e);
             }
             Auth_DB_Service.disconnect();  //отключаемся от базы данных
             executorService.shutdown();
@@ -65,7 +73,8 @@ public class Server  {
 
     // отправка личного сообщения
     public void broadcastPersonalMsg(String nickTo, String msg, ClientHandler clientHandler) {
-        System.out.println("broadcastPersonalMsg");
+        System.out.println("Передача личного сообщения");
+        log.info("Send a private message");
         //попробую оператор break с меткой
         personalIs:
         {
@@ -76,15 +85,19 @@ public class Server  {
                 if (o.getNick().equals(nickTo)) {
                     if (!clientHandler.checkBlackList(nickTo)){
                         o.sendMsg("Личка от " + clientHandler.getNick() + ": " + msg);
+                        log.info("A private message from "+clientHandler.getNick()+": " + msg );
                         clientHandler.sendMsg("В личку " + nickTo + " : " + msg);
+                        log.info("A private message to "+nickTo + ": " + msg );
                         break personalIs;
                     }else {
                         clientHandler.sendMsg(" Не отправлено: "+ nickTo + " в чёрном списке" );
+                        log.warning("Not send! " + nickTo+ " in black list");
                         break personalIs;
                     }
                 }
             }
             clientHandler.sendMsg(" Нет участника с ником: " + nickTo);
+            log.warning("No member with a nickname " + nickTo);
         }
     }
 //clientHandler.sendMsg(" Не отправлено: "+ nickTo + " в чёрном списке" );
@@ -111,12 +124,14 @@ public class Server  {
             }
         }
         System.out.println("Всего клиентов = " + clients.size());
+        log.info("Number of clients = " + clients.size());
     }
 
     //отписка нового клиента (удаление из списка)
     public void unsubscribe(ClientHandler client, String nick) {
         clients.remove(client);
         System.out.println("Осталось клиентов = " + clients.size());
+        log.info("Clients left = " + clients.size());
         for(ClientHandler c: clients){
             c.sendMsgStopped(nick);
         }
