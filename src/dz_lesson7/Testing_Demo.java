@@ -19,8 +19,9 @@ public class Testing_Demo {
     public static void  start(Class testClass){
 
         ArrayList<Method> arr = new ArrayList<>();
+        int beforNumber = -1;  //считаем методы с аннотацией beforeSuite
 
-        //получаем методы класса
+        //получаем методы класса, включая методы суперкласса
         Method[] methods = testClass.getMethods();
         //перебираем методы
         for (Method m: methods){
@@ -29,6 +30,7 @@ public class Testing_Demo {
                 try {
                     //запускаем данный метод
                     m.invoke(testClass.getConstructor().newInstance());
+                    beforNumber++;
                 } catch (InstantiationException | IllegalAccessException |
                         NoSuchMethodException | InvocationTargetException e) {
                     e.printStackTrace();
@@ -38,6 +40,9 @@ public class Testing_Demo {
             if (m.getAnnotation(Testing.class)!=null){
                 arr.add(m);
             }
+        }
+        if (beforNumber>0){
+            throw new RuntimeException(" Более одного метода с аннотацией @beforeSuite");
         }
 
         //сортируем тестовые методы по параметрам аннотаций

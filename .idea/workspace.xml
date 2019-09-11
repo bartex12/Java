@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b96fad95-a39e-40bc-99a4-20c789ed4182" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dz_lesson7/Test_Class1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dz_lesson7/Test_Class2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dz_lesson7/Test_ClassBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dz_lesson7/Testing_Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mainBaseSQLite.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/name1_chatHelloLogs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/name2_chatHelloLogs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/name3_chatHelloLogs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/JFrame_Demo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/MyWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/My_Faq.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client/My_Help.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Auth_DB_Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/ClientHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/DB_Runnable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server/Server_Demo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cat_winner.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kollaider100x67_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson6/array1And4/Array1And4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson6/array1And4/Array1And4_Demo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson6/array1And4/Array1And4_Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson6/subArray/SubArr.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson6/subArray/SubArr_Demo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson6/subArray/SubArr_Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/letters16x10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logging.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/panda100x67.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rekTel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dz_lesson7/Testing_Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dz_lesson7/Testing_Demo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -89,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dz_lesson7/Test_ClassBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
+            <state relative-caret-position="506">
               <caret line="33" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -105,11 +75,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dz_lesson7/Testing_Demo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            <state relative-caret-position="204">
+              <caret line="48" column="14" lean-forward="true" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,7 +110,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/inbox/barcats/cource/Team.java" />
         <option value="$PROJECT_DIR$/src/inbox/barcats/competitor/Cat.java" />
         <option value="$PROJECT_DIR$/src/inbox/barcats/competitor/Dog.java" />
@@ -188,6 +160,7 @@
         <option value="$PROJECT_DIR$/src/dz_lesson7/Test_Class1.java" />
         <option value="$PROJECT_DIR$/src/dz_lesson7/Test_Class2.java" />
         <option value="$PROJECT_DIR$/src/dz_lesson7/Test_ClassBase.java" />
+        <option value="$PROJECT_DIR$/src/dz_lesson7/Testing_Demo.java" />
       </list>
     </option>
   </component>
@@ -392,7 +365,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.41666666" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.43333334" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.7314815" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -433,20 +406,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Client/My_Faq.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/My_Help.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="50" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mainBaseSQLite.db">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -664,14 +623,7 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dz_lesson7/Testing_Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -707,7 +659,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dz_lesson7/Test_ClassBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
+        <state relative-caret-position="506">
           <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -715,6 +667,30 @@
             <element signature="e#520#521#0" expanded="true" />
             <element signature="e#563#564#0" expanded="true" />
             <element signature="e#623#624#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340">
+          <caret line="1502" column="27" selection-start-line="1502" selection-start-column="27" selection-end-line="1502" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="1453" column="17" lean-forward="true" selection-start-line="1453" selection-start-column="17" selection-end-line="1453" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dz_lesson7/Testing_Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="48" column="14" lean-forward="true" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
