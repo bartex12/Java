@@ -2,9 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b96fad95-a39e-40bc-99a4-20c789ed4182" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/dz_lesson7/Test_Class1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dz_lesson7/Test_Class2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dz_lesson7/Test_ClassBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dz_lesson7/Testing_Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainBaseSQLite.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/name1_chatHelloLogs.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/name2_chatHelloLogs.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/name3_chatHelloLogs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/JFrame_Demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/MyWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/My_Faq.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client/My_Help.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Auth_DB_Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/ClientHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/DB_Runnable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server/Server_Demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cat_winner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kollaider100x67_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson6/array1And4/Array1And4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson6/array1And4/Array1And4_Demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson6/array1And4/Array1And4_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson6/subArray/SubArr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson6/subArray/SubArr_Demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson6/subArray/SubArr_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/letters16x10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logging.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/panda100x67.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rekTel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/smile.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,102 +46,70 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Server/ClientHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="104" column="27" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#468#469#0" expanded="true" />
-                <element signature="e#495#496#0" expanded="true" />
-                <element signature="e#545#546#0" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Server/Auth_DB_Service.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="88" column="47" selection-start-line="88" selection-start-column="47" selection-end-line="88" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Server/Server_Demo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson6/array1And4/Array1And4.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson6/array1And4/Array1And4_Demo.java">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson6/array1And4/Array1And4_Test.java">
+        <entry file="file://$PROJECT_DIR$/src/dz_lesson7/Test_Class1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-252">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="323">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+              <folding>
+                <element signature="e#161#162#0" expanded="true" />
+                <element signature="e#218#219#0" expanded="true" />
+                <element signature="e#275#276#0" expanded="true" />
+                <element signature="e#332#333#0" expanded="true" />
+                <element signature="e#389#390#0" expanded="true" />
+                <element signature="e#446#447#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson6/subArray/SubArr.java">
+        <entry file="file://$PROJECT_DIR$/src/dz_lesson7/Test_Class2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="272">
+              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+              <folding>
+                <element signature="e#124#125#0" expanded="true" />
+                <element signature="e#181#182#0" expanded="true" />
+                <element signature="e#238#239#0" expanded="true" />
+                <element signature="e#295#296#0" expanded="true" />
+                <element signature="e#352#353#0" expanded="true" />
+                <element signature="e#409#410#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Server/DB_Runnable.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dz_lesson7/Test_ClassBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+            <state relative-caret-position="455">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#457#458#0" expanded="true" />
+                <element signature="e#520#521#0" expanded="true" />
+                <element signature="e#563#564#0" expanded="true" />
+                <element signature="e#623#624#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dz_lesson7/Testing_Demo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -141,11 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Competitor.java" />
-        <option value="$PROJECT_DIR$/src/Animal.java" />
-        <option value="$PROJECT_DIR$/src/Human.java" />
-        <option value="$PROJECT_DIR$/src/Cource.java" />
-        <option value="$PROJECT_DIR$/src/Team.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/inbox/barcats/cource/Team.java" />
         <option value="$PROJECT_DIR$/src/inbox/barcats/competitor/Cat.java" />
@@ -192,6 +183,11 @@
         <option value="$PROJECT_DIR$/src/Server/Auth_DB_Service.java" />
         <option value="$PROJECT_DIR$/src/Server/ClientHandler.java" />
         <option value="$PROJECT_DIR$/src/Server/Server.java" />
+        <option value="$PROJECT_DIR$/src/Lesson7_Java3/Test_ClassBase.java" />
+        <option value="$PROJECT_DIR$/src/Lesson7_Java3/Test_Class1.java" />
+        <option value="$PROJECT_DIR$/src/dz_lesson7/Test_Class1.java" />
+        <option value="$PROJECT_DIR$/src/dz_lesson7/Test_Class2.java" />
+        <option value="$PROJECT_DIR$/src/dz_lesson7/Test_ClassBase.java" />
       </list>
     </option>
   </component>
@@ -206,6 +202,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -222,33 +219,17 @@
               <item name="Lesson1" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lesson6" type="462c0819:PsiDirectoryNode" />
+              <item name="dz_lesson7" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Lesson1" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lesson6" type="462c0819:PsiDirectoryNode" />
-              <item name="array1And4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lesson1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lesson6" type="462c0819:PsiDirectoryNode" />
-              <item name="subArray" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lesson1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,24 +238,26 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/lesson6/subArray" />
+    <property name="ignore_missing_gitignore" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Lesson7_Java3" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Java_Programs\GeekBrains\Java\src\lesson6\subArray" />
-      <recent name="D:\Java_Programs\GeekBrains\Java\src\lesson6\array1And4" />
-      <recent name="D:\Java_Programs\GeekBrains\Java" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java_Programs\GeekBrains\Java\123" />
+      <recent name="D:\Java_Programs\GeekBrains\Java\src" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="Less4_ABC" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Java_Programs\GeekBrains\Java\123" />
-      <recent name="D:\Java_Programs\GeekBrains\Java\src" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java_Programs\GeekBrains\Java\src\Lesson7_Java3" />
+      <recent name="D:\Java_Programs\GeekBrains\Java\src\lesson6\subArray" />
+      <recent name="D:\Java_Programs\GeekBrains\Java\src\lesson6\array1And4" />
+      <recent name="D:\Java_Programs\GeekBrains\Java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -289,7 +272,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SubArr_Test">
+  <component name="RunManager" selected="Application.dz_lesson7.Testing_Demo">
     <configuration name="Array1And4_Demo" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="lesson6.array1And4.Array1And4_Demo" />
       <module name="Java" />
@@ -318,17 +301,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Array1And4_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="dz_lesson7.Testing_Demo" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="dz_lesson7.Testing_Demo" />
       <module name="Java" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lesson6.array1And4.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lesson6.array1And4" />
-      <option name="MAIN_CLASS_NAME" value="lesson6.array1And4.Array1And4_Test" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -349,17 +324,16 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.dz_lesson7.Testing_Demo" />
       <item itemvalue="Application.JFrame_Demo" />
       <item itemvalue="Application.Array1And4_Demo" />
       <item itemvalue="Application.SubArr_Demo" />
       <item itemvalue="Application.Server_Demo" />
-      <item itemvalue="JUnit.Array1And4_Test" />
       <item itemvalue="JUnit.SubArr_Test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.SubArr_Test" />
-        <item itemvalue="JUnit.Array1And4_Test" />
       </list>
     </recent_temporary>
   </component>
@@ -389,6 +363,12 @@
     <history-entry file="Array1And4_Test - 2019.09.07 at 20h 16m 14s.xml">
       <configuration name="Array1And4_Test" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Array1And4_Test - 2019.09.08 at 00h 14m 01s.xml">
+      <configuration name="Array1And4_Test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SubArr_Test - 2019.09.08 at 00h 14m 12s.xml">
+      <configuration name="SubArr_Test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -403,7 +383,7 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1951417" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19838056" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -412,7 +392,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.41666666" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22777778" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43333334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -453,38 +433,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="744" column="19" selection-start-line="744" selection-start-column="19" selection-end-line="744" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/io/PrintStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="803" column="16" selection-start-line="803" selection-start-column="16" selection-end-line="803" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kollaider100x67.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/smile_24.png" />
-    <entry file="file://$PROJECT_DIR$/src/smile.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/rekTel.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/panda100x67.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/letters16x10.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/kollaider100x67_2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client/OnExitListener.java" />
     <entry file="file://$PROJECT_DIR$/src/Client/My_Faq.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -502,23 +450,10 @@
     <entry file="file://$PROJECT_DIR$/mainBaseSQLite.db">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Java.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/123/test.txt" />
     <entry file="file://$PROJECT_DIR$/123/2.txt" />
     <entry file="file://$PROJECT_DIR$/123/3.txt" />
@@ -552,13 +487,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Less4_ABC/ABC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Less4_ABC/ABC.java" />
     <entry file="file://$PROJECT_DIR$/src/lesson6/subArray/SubArr_Demo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -573,25 +502,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/logging.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application_log.txt.0.lck">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application_log.txt.1">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application_log.txt.2">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application_log.txt.0">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/logging.properties" />
+    <entry file="file://$PROJECT_DIR$/application_log.txt.0.lck" />
+    <entry file="file://$PROJECT_DIR$/application_log.txt.1" />
+    <entry file="file://$PROJECT_DIR$/application_log.txt.2" />
+    <entry file="file://$PROJECT_DIR$/application_log.txt.0" />
     <entry file="file://$PROJECT_DIR$/name2_chatHelloLogs.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -605,11 +520,7 @@
     <entry file="file://$PROJECT_DIR$/name3_chatHelloLogs.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server_log.txt.1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1929" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server_log.txt.1" />
     <entry file="file://$PROJECT_DIR$/src/logging.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -617,30 +528,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server_log.txt.0">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/ClientHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="104" column="27" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Server/Auth_DB_Service.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="1428">
           <caret line="88" column="47" selection-start-line="88" selection-start-column="47" selection-end-line="88" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/DB_Runnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/Server_Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -663,45 +581,140 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson6/array1And4/Array1And4_Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
+        <state relative-caret-position="85">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson6/subArray/SubArr.java">
+    <entry file="file://$PROJECT_DIR$/src/Server/DB_Runnable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
+        <state relative-caret-position="255">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server_log.txt.0">
+    <entry file="file://$PROJECT_DIR$/src/lesson6/subArray/SubArr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="81">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server/ClientHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/Server/Server_Demo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="104" column="27" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
+        <state relative-caret-position="360">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lesson7_Java3/Test_Class2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lesson7_Java3/BeforeTesting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lesson7_Java3/AfterTesting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lesson7_Java3/Test_Class1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lesson7_Java3/Test_ClassBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lesson7_Java3/Testing_Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dz_lesson7/Testing_Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dz_lesson7/Test_Class1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="e#161#162#0" expanded="true" />
+            <element signature="e#218#219#0" expanded="true" />
+            <element signature="e#275#276#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#389#390#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dz_lesson7/Test_Class2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="e#124#125#0" expanded="true" />
+            <element signature="e#181#182#0" expanded="true" />
+            <element signature="e#238#239#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dz_lesson7/Test_ClassBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#457#458#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#563#564#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
           </folding>
         </state>
       </provider>
